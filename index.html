@@ -531,6 +531,22 @@
     text-transform:uppercase;color:rgba(244,236,223,0.5);margin-top:16px;
   }
 
+  /* ===== PORTRAIT PHOTOS ===== */
+  .figure-portrait{position:relative;}
+  .figure-portrait img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center top;
+    display:block;
+  }
+  .figure-portrait .cap{position:relative;z-index:1;}
+
+  .freire-portrait img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center top;
+    display:block;filter:grayscale(20%);
+  }
+  .freire-portrait .cap{position:relative;z-index:1;}
+
   /* ===== SLIDE 15: TRAILER ===== */
   #s15 .trailer-wrap{
     flex:1;min-height:0;position:relative;
@@ -547,6 +563,23 @@
     font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
     text-transform:uppercase;color:rgba(244,236,223,0.5);margin-top:20px;
   }
+
+  /* ===== SLIDE 16: MORALE ===== */
+  #s16 .moral-body{
+    font-family:'Fraunces',serif;font-weight:300;font-size:52px;line-height:1.45;
+    letter-spacing:-0.01em;color:var(--paper);max-width:1580px;
+  }
+  #s16 .moral-body em{font-style:italic;color:var(--ochre);font-weight:400;}
+  #s16 .moral-body strong{font-style:normal;font-weight:500;color:var(--paper);}
+  #s16 .moral-divider{
+    width:80px;height:2px;background:var(--ochre);margin:56px 0;
+  }
+  #s16 .moral-close{
+    font-family:'Fraunces',serif;font-weight:300;font-style:italic;
+    font-size:44px;line-height:1.4;letter-spacing:-0.01em;
+    color:rgba(244,236,223,0.75);max-width:1400px;
+  }
+  #s16 .moral-close em{color:var(--ochre);font-style:italic;}
 </style>
 </head>
 <body>
@@ -567,7 +600,7 @@
       </div>
     </div>
     <div class="meta">
-      <span>Lezione · <b>15 slide</b></span>
+      <span>Lezione · <b>16 slide</b></span>
       <span>Durata · <b>10 minuti</b></span>
     </div>
   </section>
@@ -598,7 +631,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">02 / 15</div>
+    <div class="corner-num">02 / 16</div>
   </section>
 
   <!-- ===== 3 — DA OGGETTO A SOGGETTO ===== -->
@@ -629,7 +662,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">03 / 15</div>
+    <div class="corner-num">03 / 16</div>
   </section>
 
   <!-- ===== 4 — UNA PAROLA CHE SI ALLARGA ===== -->
@@ -650,7 +683,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">04 / 15</div>
+    <div class="corner-num">04 / 16</div>
   </section>
 
   <!-- ===== 5 — FREIRE ===== -->
@@ -660,6 +693,7 @@
       <div class="rule"></div>
       <div class="grow row gap-l" style="align-items:center;margin-top:40px;">
         <div class="freire-portrait">
+          <img src="images/freire.jpg" alt="Paulo Freire" onerror="this.style.display='none'">
           <div class="cap">Paulo Freire<br/>1921 — 1997</div>
         </div>
         <div class="col" style="flex:1;">
@@ -671,7 +705,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">05 / 15</div>
+    <div class="corner-num">05 / 16</div>
   </section>
 
   <!-- ===== 6 — MODELLO BANCARIO vs DIALOGICO ===== -->
@@ -704,7 +738,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">06 / 15</div>
+    <div class="corner-num">06 / 16</div>
   </section>
 
   <!-- ===== 7 — TRE PRINCIPI ===== -->
@@ -732,7 +766,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">07 / 15</div>
+    <div class="corner-num">07 / 16</div>
   </section>
 
   <!-- ===== 8 — MINI-GIOCO ===== -->
@@ -830,7 +864,7 @@
         <span class="game-reset-hint">clicca su entrambi i docenti per confrontare i modelli</span>
       </div>
     </div>
-    <div class="corner-num">08 / 15</div>
+    <div class="corner-num">08 / 16</div>
   </section>
 
   <!-- ===== 9 — COSCIENTIZZAZIONE ===== -->
@@ -848,7 +882,7 @@
       </div>
     </div>
     <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto II</div>
-    <div class="corner-num">09 / 15</div>
+    <div class="corner-num">09 / 16</div>
   </section>
 
   <!-- ===== 10 — VULNERABILITA ≠ FRAGILITA ===== -->
@@ -881,7 +915,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">10 / 15</div>
+    <div class="corner-num">10 / 16</div>
   </section>
 
   <!-- ===== 11 — MALALA ===== -->
@@ -891,7 +925,8 @@
       <div class="rule"></div>
       <div class="figure-slide" style="margin-top:40px;">
         <div class="figure-portrait">
-          <div class="cap">[ ritratto · Malala Yousafzai ]<br/>foto da inserire</div>
+          <img src="images/malala.jpg" alt="Malala Yousafzai" onerror="this.style.display='none'">
+          <div class="cap">Malala Yousafzai</div>
         </div>
         <div class="figure-side">
           <h2>Malala Yousafzai</h2>
@@ -906,7 +941,7 @@
       </div>
     </div>
     <div class="corner-section">Atto III</div>
-    <div class="corner-num">11 / 15</div>
+    <div class="corner-num">11 / 16</div>
   </section>
 
   <!-- ===== 12 — ALBRIGHT ===== -->
@@ -916,7 +951,8 @@
       <div class="rule"></div>
       <div class="figure-slide" style="margin-top:40px;">
         <div class="figure-portrait">
-          <div class="cap">[ ritratto · Madeleine Albright ]<br/>foto da inserire</div>
+          <img src="images/albright.jpg" alt="Madeleine Albright" onerror="this.style.display='none'">
+          <div class="cap">Madeleine Albright</div>
         </div>
         <div class="figure-side">
           <h2>Madeleine Albright</h2>
@@ -931,7 +967,7 @@
       </div>
     </div>
     <div class="corner-section">Atto III</div>
-    <div class="corner-num">12 / 15</div>
+    <div class="corner-num">12 / 16</div>
   </section>
 
   <!-- ===== 13 — DONNE ===== -->
@@ -969,7 +1005,7 @@
       </div>
     </div>
     <div class="corner-section">Atto IV</div>
-    <div class="corner-num">13 / 15</div>
+    <div class="corner-num">13 / 16</div>
   </section>
 
   <!-- ===== 14 — FUTURO ===== -->
@@ -988,7 +1024,7 @@
       </div>
     </div>
     <div class="signoff">grazie.</div>
-    <div class="corner-num" style="color:rgba(244,236,223,0.7);">14 / 15</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.7);">14 / 16</div>
   </section>
 
   <!-- ===== 15 — TRAILER C'È ANCORA DOMANI ===== -->
@@ -1011,7 +1047,33 @@
       </div>
     </div>
     <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto V</div>
-    <div class="corner-num" style="color:rgba(244,236,223,0.6);">15 / 15</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.6);">15 / 16</div>
+  </section>
+
+
+  <!-- ===== 16 — MORALE DEL FILM ===== -->
+  <section id="s16" class="slide dark" data-label="16 La morale">
+    <div class="frame" style="padding:90px 140px 100px 140px;">
+      <div class="eyebrow">V · La morale</div>
+      <div class="rule"></div>
+      <div class="grow" style="display:flex;flex-direction:column;justify-content:center;">
+        <div class="moral-body">
+          L'emancipazione non è solo <em>liberarsi da una relazione oppressiva</em>,<br/>
+          ma acquisire coscienza dei propri <em>diritti</em> e del proprio <em>valore</em><br/>
+          all'interno della società.<br/><br/>
+          Il voto diventa il simbolo di una libertà più profonda, <em>collettiva</em>,<br/>
+          che non riguarda solo Delia — ma <em>tutte le donne</em>.
+        </div>
+        <div class="moral-divider"></div>
+        <div class="moral-close">
+          Il cambiamento più importante non è sempre il più evidente.<br/>
+          È quello che costruisce le basi per un futuro diverso:<br/>
+          <em>scegliere, partecipare, avere voce.</em>
+        </div>
+      </div>
+    </div>
+    <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto V</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.6);">16 / 16</div>
   </section>
 
 </deck-stage>
