@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Emancipazione</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="deck-stage.js"></script>
+<style>
+  :root{
+    --paper:#f4ecdf;          /* avorio caldo */
+    --paper-2:#ebe1d0;        /* avorio più scuro */
+    --ink:#231a14;            /* nero caldo */
+    --ink-2:#3a2e24;          /* grigio caldo */
+    --muted:#7a6a59;          /* terra muta */
+    --rule:#c9b89a;           /* riga sottile */
+    --terra:#9a4a2a;          /* terracotta */
+    --terra-2:#bd5a32;        /* terracotta brillante */
+    --ochre:#b8843a;          /* ocra */
+    --moss:#5a6b3f;           /* verde muschio (uso parco) */
+  }
+  html,body{margin:0;padding:0;background:#1a1410;}
+  body{font-family:'Inter',sans-serif;color:var(--ink);}
+
+  /* ====== SLIDE BASE ====== */
+  .slide{
+    background:var(--paper);
+    color:var(--ink);
+    overflow:hidden;
+    font-family:'Inter',sans-serif;
+    position:relative;
+  }
+  .slide.dark{background:var(--ink);color:var(--paper);}
+  .slide.terra{background:var(--terra);color:var(--paper);}
+
+  /* paper grain */
+  .slide::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(rgba(58,46,36,0.05) 1px, transparent 1px);
+    background-size:3px 3px;opacity:0.5;mix-blend-mode:multiply;
+  }
+  .slide.dark::after, .slide.terra::after{
+    background-image:radial-gradient(rgba(244,236,223,0.04) 1px, transparent 1px);
+    mix-blend-mode:screen;
+  }
+
+  /* slide chrome */
+  .frame{
+    position:absolute;inset:0;
+    padding:100px 120px 80px 120px;
+    display:flex;flex-direction:column;
+    box-sizing:border-box;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--muted);font-weight:500;
+  }
+  .slide.dark .eyebrow{color:#b8a48a;}
+  .slide.terra .eyebrow{color:rgba(244,236,223,0.75);}
+  .rule{height:1px;background:var(--rule);margin:24px 0 0 0;}
+  .slide.dark .rule, .slide.terra .rule{background:rgba(244,236,223,0.25);}
+
+  .corner-num{
+    position:absolute;bottom:48px;right:60px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:var(--muted);letter-spacing:0.1em;
+  }
+  .slide.dark .corner-num, .slide.terra .corner-num{color:rgba(244,236,223,0.6);}
+  .corner-section{
+    position:absolute;bottom:48px;left:60px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:var(--muted);letter-spacing:0.18em;text-transform:uppercase;
+  }
+  .slide.dark .corner-section, .slide.terra .corner-section{color:rgba(244,236,223,0.6);}
+
+  /* type scale */
+  .h-display{font-family:'Fraunces',serif;font-weight:400;font-size:200px;line-height:0.92;letter-spacing:-0.03em;}
+  .h-title{font-family:'Fraunces',serif;font-weight:400;font-size:104px;line-height:1.0;letter-spacing:-0.02em;}
+  .h-section{font-family:'Fraunces',serif;font-weight:400;font-size:72px;line-height:1.05;letter-spacing:-0.015em;}
+  .h-sub{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:44px;line-height:1.2;color:var(--ink-2);}
+  .body-l{font-family:'Inter',sans-serif;font-weight:400;font-size:34px;line-height:1.45;color:var(--ink-2);}
+  .body-m{font-family:'Inter',sans-serif;font-weight:400;font-size:28px;line-height:1.5;color:var(--ink-2);}
+  .small{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:24px;color:var(--muted);}
+  .accent-italic{font-family:'Fraunces',serif;font-style:italic;color:var(--terra);}
+
+  /* utility */
+  .col{display:flex;flex-direction:column;}
+  .row{display:flex;flex-direction:row;}
+  .grow{flex:1;}
+  .gap-s{gap:16px;} .gap-m{gap:32px;} .gap-l{gap:60px;} .gap-xl{gap:100px;}
+
+  /* ===== SLIDE 1: COVER ===== */
+  #s1 .word{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:240px;line-height:0.9;letter-spacing:-0.04em;
+    color:var(--ink);
+  }
+  #s1 .word .em{color:var(--terra);font-style:italic;font-weight:400;}
+  #s1 .meta{
+    position:absolute;left:120px;bottom:80px;
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
+    text-transform:uppercase;color:var(--muted);
+    display:flex;gap:48px;
+  }
+  #s1 .meta b{color:var(--ink);font-weight:500;}
+  #s1 .top-mark{
+    position:absolute;top:80px;left:120px;right:120px;
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--muted);
+  }
+
+  /* ===== SLIDE 2: ETIMOLOGIA ===== */
+  .etym{
+    display:flex;align-items:baseline;gap:40px;justify-content:center;
+    font-family:'Fraunces',serif;font-size:160px;font-weight:300;letter-spacing:-0.02em;
+  }
+  .etym .piece{position:relative;}
+  .etym .pipe{color:var(--rule);font-weight:200;}
+  .etym .piece small{
+    display:block;
+    font-family:'JetBrains Mono',monospace;font-size:24px;
+    letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);
+    margin-top:24px;font-weight:500;
+  }
+  .etym .piece .gloss{
+    display:block;
+    font-family:'Fraunces',serif;font-style:italic;font-size:38px;
+    color:var(--ink-2);margin-top:18px;letter-spacing:-0.01em;
+  }
+
+  /* ===== SLIDE 3: ETERONOMIA → AUTONOMIA ===== */
+  .arrow-block{
+    display:grid;grid-template-columns:1fr auto 1fr;gap:80px;align-items:center;
+  }
+  .arrow-block .pole{
+    border:1px solid var(--rule);background:rgba(255,255,255,0.3);
+    padding:60px 56px;min-height:300px;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .arrow-block .pole.right{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+  .arrow-block .pole .label{
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:24px;
+  }
+  .arrow-block .pole.right .label{color:#b8a48a;}
+  .arrow-block .pole h3{
+    font-family:'Fraunces',serif;font-weight:400;font-size:64px;line-height:1;margin:0 0 32px 0;letter-spacing:-0.02em;
+  }
+  .arrow-block .pole p{
+    font-family:'Inter',sans-serif;font-size:26px;line-height:1.45;margin:0;color:var(--ink-2);
+  }
+  .arrow-block .pole.right p{color:rgba(244,236,223,0.8);}
+  .arrow-block .arr{
+    font-family:'Fraunces',serif;font-size:120px;color:var(--terra);font-weight:300;line-height:1;
+  }
+
+  /* ===== SLIDE 4: AMPLIAMENTO ===== */
+  .ladder{display:flex;flex-direction:column;gap:0;}
+  .ladder .step{
+    display:grid;grid-template-columns:200px 1fr;gap:60px;align-items:baseline;
+    padding:32px 0;border-top:1px solid var(--rule);
+  }
+  .ladder .step:last-child{border-bottom:1px solid var(--rule);}
+  .ladder .step .era{
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--muted);
+  }
+  .ladder .step .what{
+    font-family:'Fraunces',serif;font-size:42px;line-height:1.2;color:var(--ink);
+  }
+
+  /* ===== SLIDE 5: FREIRE ===== */
+  .pull-quote{
+    font-family:'Fraunces',serif;font-weight:300;font-style:italic;
+    font-size:78px;line-height:1.15;letter-spacing:-0.015em;
+    color:var(--ink);max-width:1500px;
+  }
+  .pull-quote .mark{color:var(--terra);font-style:normal;font-weight:400;}
+  .attribution{
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
+    text-transform:uppercase;color:var(--muted);margin-top:60px;
+  }
+  .freire-portrait{
+    width:380px;height:480px;background:var(--paper-2);
+    border:1px solid var(--rule);
+    display:flex;align-items:flex-end;justify-content:center;
+    padding:24px;box-sizing:border-box;
+    background-image:repeating-linear-gradient(135deg,transparent 0 14px,rgba(58,46,36,0.06) 14px 15px);
+    flex:none;
+  }
+  .freire-portrait .cap{
+    font-family:'JetBrains Mono',monospace;font-size:24px;
+    letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-align:center;
+  }
+
+  /* ===== SLIDE 6: MODELLO BANCARIO ===== */
+  .compare{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    border-top:1px solid var(--rule);
+  }
+  .compare .col-c{
+    padding:48px 56px;border-right:1px solid var(--rule);
+  }
+  .compare .col-c:last-child{border-right:none;background:rgba(154,74,42,0.06);}
+  .compare .col-c .tag{
+    display:inline-block;
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
+    text-transform:uppercase;padding:8px 14px;
+    border:1px solid var(--rule);color:var(--muted);margin-bottom:32px;
+  }
+  .compare .col-c:last-child .tag{border-color:var(--terra);color:var(--terra);}
+  .compare .col-c h3{
+    font-family:'Fraunces',serif;font-weight:400;font-size:54px;line-height:1.05;
+    margin:0 0 24px 0;letter-spacing:-0.02em;
+  }
+  .compare .col-c ul{
+    list-style:none;padding:0;margin:0;
+    font-family:'Inter',sans-serif;font-size:26px;line-height:1.55;color:var(--ink-2);
+  }
+  .compare .col-c li{padding:14px 0;border-top:1px solid var(--rule);}
+  .compare .col-c li:first-child{border-top:none;}
+  .compare .col-c li::before{
+    content:"—";color:var(--muted);margin-right:16px;
+  }
+
+  /* ===== SLIDE 7: EDUCAZIONE PRATICA DI LIBERTA ===== */
+  .three-up{display:grid;grid-template-columns:repeat(3,1fr);gap:60px;}
+  .three-up .card{
+    border-top:2px solid var(--terra);
+    padding-top:32px;
+  }
+  .three-up .card .num{
+    font-family:'Fraunces',serif;font-size:96px;font-weight:300;line-height:1;color:var(--terra);
+    letter-spacing:-0.02em;
+  }
+  .three-up .card h4{
+    font-family:'Fraunces',serif;font-weight:400;font-size:48px;margin:24px 0 20px 0;line-height:1.05;letter-spacing:-0.015em;
+  }
+  .three-up .card p{
+    font-family:'Inter',sans-serif;font-size:26px;line-height:1.5;color:var(--ink-2);margin:0;
+  }
+
+  /* ===== SLIDE 8: MINI-GIOCO ===== */
+  #s8 .game-wrap{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    flex:1;min-height:0;border-top:1px solid var(--rule);
+  }
+  #s8 .game-side{
+    padding:40px 48px;display:flex;flex-direction:column;
+    border-right:1px solid var(--rule);position:relative;
+  }
+  #s8 .game-side:last-child{border-right:none;background:rgba(154,74,42,0.05);}
+  #s8 .game-side .title{
+    font-family:'Fraunces',serif;font-size:42px;font-weight:400;letter-spacing:-0.015em;
+    margin-bottom:8px;
+  }
+  #s8 .game-side .subtitle{
+    font-family:'Fraunces',serif;font-style:italic;font-size:26px;color:var(--muted);
+    margin-bottom:24px;
+  }
+
+  /* bancario stage */
+  .stage{
+    flex:1;position:relative;background:var(--paper-2);
+    border:1px solid var(--rule);overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  #s8 .game-side:last-child .stage{background:#fbeede;}
+  .teacher{
+    position:absolute;top:30px;left:50%;transform:translateX(-50%);
+    width:120px;height:140px;
+  }
+  .teacher .head{width:60px;height:60px;border-radius:50%;background:var(--ink);margin:0 auto;}
+  .teacher .body{width:90px;height:80px;background:var(--ink);margin:8px auto 0;border-radius:14px 14px 6px 6px;}
+  .teacher .label{
+    position:absolute;top:155px;left:50%;transform:translateX(-50%);
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--muted);white-space:nowrap;
+  }
+  .students{
+    position:absolute;bottom:50px;left:50%;transform:translateX(-50%);
+    display:flex;gap:30px;
+  }
+  .student{
+    width:90px;display:flex;flex-direction:column;align-items:center;
+  }
+  .student .vessel{
+    width:80px;height:120px;border:3px solid var(--ink);
+    border-top:none;border-radius:0 0 16px 16px;
+    background:transparent;position:relative;overflow:hidden;
+  }
+  .student .fill{
+    position:absolute;bottom:0;left:0;right:0;
+    background:var(--ochre);height:0%;transition:height 0.4s ease;
+  }
+  .student .fill.dialog{background:var(--terra-2);}
+  .student .head{
+    width:42px;height:42px;border-radius:50%;background:var(--ink);margin-bottom:6px;
+  }
+  .student .face{
+    width:42px;height:42px;border-radius:50%;background:var(--ink);
+    position:relative;margin-bottom:6px;
+  }
+  .student .face::before, .student .face::after{
+    content:"";position:absolute;width:5px;height:5px;border-radius:50%;
+    background:var(--paper-2);top:14px;
+  }
+  .student .face::before{left:11px;} .student .face::after{right:11px;}
+  .student .mouth{
+    position:absolute;bottom:11px;left:50%;transform:translateX(-50%);
+    width:14px;height:2px;background:var(--paper-2);
+  }
+  .student .mouth.smile{height:6px;width:18px;border-radius:0 0 9px 9px;background:var(--paper-2);}
+  /* coin */
+  .coin{
+    position:absolute;width:24px;height:24px;border-radius:50%;
+    background:var(--ochre);border:2px solid var(--ink);
+    pointer-events:none;
+  }
+  .coin::after{
+    content:"$";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:14px;font-weight:600;color:var(--ink);
+  }
+
+  /* dialog rays */
+  .dialog-svg{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 0.4s;}
+  .dialog-svg.on{opacity:1;}
+  .lightbulb{
+    position:absolute;top:-10px;right:-10px;
+    width:32px;height:32px;border-radius:50%;
+    background:var(--ochre);border:2px solid var(--ink);
+    box-shadow:0 0 0 0 rgba(184,132,58,0);
+    opacity:0;transition:opacity 0.3s, box-shadow 0.6s;
+  }
+  .lightbulb.on{opacity:1;box-shadow:0 0 0 12px rgba(184,132,58,0.25);}
+
+  .game-controls{
+    margin-top:20px;display:flex;gap:12px;align-items:center;
+  }
+  .btn{
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;
+    text-transform:uppercase;padding:14px 22px;
+    border:1px solid var(--ink);background:var(--paper);color:var(--ink);
+    cursor:pointer;transition:all 0.15s;
+  }
+  .btn:hover{background:var(--ink);color:var(--paper);}
+  .btn.terra{background:var(--terra);color:var(--paper);border-color:var(--terra);}
+  .btn.terra:hover{background:var(--ink);border-color:var(--ink);}
+  .meter{
+    flex:1;height:6px;background:var(--rule);position:relative;
+  }
+  .meter .bar{
+    position:absolute;left:0;top:0;bottom:0;width:0%;background:var(--terra);transition:width 0.4s;
+  }
+  .meter-label{
+    font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--muted);min-width:80px;text-align:right;
+  }
+
+  /* ===== SLIDE 9: COSCIENTIZZAZIONE ===== */
+  #s9 .word-big{
+    font-family:'Fraunces',serif;font-weight:300;font-size:200px;line-height:0.95;
+    letter-spacing:-0.035em;color:var(--paper);
+  }
+  #s9 .word-big em{font-style:italic;color:var(--ochre);font-weight:400;}
+  #s9 .gloss{
+    font-family:'Fraunces',serif;font-style:italic;font-size:42px;line-height:1.3;color:var(--ink-2);
+    max-width:900px;margin-top:48px;
+  }
+  #s9 .pt{
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
+    text-transform:uppercase;color:var(--muted);margin-top:32px;
+  }
+
+  /* ===== SLIDE 10: VULNERABILITA ===== */
+  .vs-table{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);
+  }
+  .vs-table .head{
+    padding:32px 40px;border-right:1px solid var(--rule);
+    background:var(--paper-2);
+  }
+  .vs-table .head:last-child{border-right:none;background:rgba(154,74,42,0.1);}
+  .vs-table .head h3{
+    font-family:'Fraunces',serif;font-size:60px;font-weight:400;margin:0;letter-spacing:-0.02em;
+  }
+  .vs-table .head:last-child h3{color:var(--terra);}
+  .vs-table .head .sub{
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
+    text-transform:uppercase;color:var(--muted);margin-top:8px;
+  }
+  .vs-table .cell{
+    padding:24px 40px;border-top:1px solid var(--rule);border-right:1px solid var(--rule);
+    font-family:'Inter',sans-serif;font-size:26px;line-height:1.45;color:var(--ink-2);
+  }
+  .vs-table .cell:nth-child(2n){border-right:none;}
+
+  /* ===== SLIDE 11/12: MALALA / ALBRIGHT ===== */
+  .figure-slide{display:grid;grid-template-columns:560px 1fr;gap:80px;flex:1;min-height:0;}
+  .figure-portrait{
+    background:var(--paper-2);border:1px solid var(--rule);
+    background-image:repeating-linear-gradient(135deg,transparent 0 14px,rgba(58,46,36,0.06) 14px 15px);
+    display:flex;align-items:flex-end;padding:24px;
+  }
+  .figure-portrait .cap{
+    font-family:'JetBrains Mono',monospace;font-size:24px;
+    letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
+  }
+  .figure-side h2{
+    font-family:'Fraunces',serif;font-weight:400;font-size:96px;line-height:0.95;margin:0 0 16px 0;letter-spacing:-0.025em;
+  }
+  .figure-side .years{
+    font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--terra);letter-spacing:0.14em;margin-bottom:48px;
+  }
+  .figure-side p{
+    font-family:'Inter',sans-serif;font-size:28px;line-height:1.5;color:var(--ink-2);margin:0 0 32px 0;max-width:900px;
+  }
+  .timeline{
+    display:flex;flex-direction:column;gap:0;margin-top:24px;border-top:1px solid var(--rule);
+  }
+  .timeline .row-t{
+    display:grid;grid-template-columns:120px 1fr;gap:32px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:baseline;
+  }
+  .timeline .yr{font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--terra);letter-spacing:0.1em;font-weight:500;}
+  .timeline .ev{font-family:'Inter',sans-serif;font-size:26px;color:var(--ink-2);line-height:1.4;}
+
+  /* ===== SLIDE 13: DONNE ===== */
+  .factor-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:48px 80px;
+  }
+  .factor{
+    border-left:1px solid var(--rule);padding-left:32px;
+  }
+  .factor .num{
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;color:var(--terra);
+  }
+  .factor h4{
+    font-family:'Fraunces',serif;font-weight:400;font-size:40px;line-height:1.1;margin:8px 0 14px 0;letter-spacing:-0.015em;
+  }
+  .factor p{
+    font-family:'Inter',sans-serif;font-size:24px;line-height:1.5;color:var(--ink-2);margin:0;
+  }
+
+  /* ===== SLIDE 14: FUTURO ===== */
+  #s14 .closer{
+    font-family:'Fraunces',serif;font-weight:300;font-size:96px;line-height:1.1;
+    letter-spacing:-0.025em;color:var(--paper);max-width:1500px;
+  }
+  #s14 .closer em{font-style:italic;color:var(--ochre);font-weight:400;}
+  #s14 .end-mark{
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;
+    text-transform:uppercase;color:rgba(244,236,223,0.7);margin-top:64px;
+  }
+  #s14 .signoff{
+    position:absolute;left:120px;bottom:80px;
+    font-family:'Fraunces',serif;font-style:italic;font-size:38px;color:var(--ochre);
+  }
+  #s14 .cite-film{
+    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.14em;
+    text-transform:uppercase;color:rgba(244,236,223,0.5);margin-top:16px;
+  }
+
+  /* ===== SLIDE 14b — final word ===== */
+  .final-word{
+    font-family:'Fraunces',serif;font-weight:300;font-size:240px;line-height:0.92;
+    letter-spacing:-0.04em;
+  }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+  <!-- ===== 1 — COVER ===== -->
+  <section id="s1" class="slide" data-label="01 Cover">
+    <div class="top-mark">
+      <span>Esame · Pedagogia interculturale</span>
+      <span>Maggio 2026</span>
+    </div>
+    <div class="frame" style="justify-content:center;align-items:flex-start;">
+      <div class="word">e<span class="em">·</span>mancipazione</div>
+      <div class="body-l" style="margin-top:48px;max-width:1200px;color:var(--ink-2);">
+        Una parola, una pratica, un processo.<br/>
+        Dalla radice latina alla pedagogia degli oppressi.
+      </div>
+    </div>
+    <div class="meta">
+      <span>Lezione · <b>14 slide</b></span>
+      <span>Durata · <b>10 minuti</b></span>
+    </div>
+  </section>
+
+  <!-- ===== 2 — ETIMOLOGIA ===== -->
+  <section id="s2" class="slide" data-label="02 E-mancipium">
+    <div class="frame">
+      <div class="eyebrow">I · La parola</div>
+      <div class="rule"></div>
+      <div class="grow" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+        <div class="small" style="margin-bottom:48px;">latino · emancipatio</div>
+        <div class="etym">
+          <div class="piece">
+            <span style="color:var(--terra);font-style:italic;">e-</span>
+            <span class="gloss">fuori</span>
+            <small>prefisso</small>
+          </div>
+          <div class="pipe">+</div>
+          <div class="piece">
+            mancipium
+            <span class="gloss">possesso, proprietà</span>
+            <small>sostantivo</small>
+          </div>
+        </div>
+        <div class="h-sub" style="margin-top:80px;text-align:center;max-width:1200px;">
+          “Uscire dal possesso” — smettere di essere oggetto<br/>del dominio altrui.
+        </div>
+      </div>
+    </div>
+    <div class="corner-section">Atto I</div>
+    <div class="corner-num">02 / 14</div>
+  </section>
+
+  <!-- ===== 3 — DA OGGETTO A SOGGETTO ===== -->
+  <section id="s3" class="slide" data-label="03 Da oggetto a soggetto">
+    <div class="frame">
+      <div class="eyebrow">I · Il passaggio</div>
+      <div class="rule"></div>
+      <div class="h-section" style="margin:60px 0 80px 0;max-width:1400px;">
+        Da <span class="accent-italic">oggetto</span> del dominio altrui<br/>
+        a <span class="accent-italic">soggetto</span> della propria esistenza.
+      </div>
+      <div class="arrow-block grow">
+        <div class="pole">
+          <div>
+            <div class="label">Eteronomia</div>
+            <h3>La vita determinata da altri.</h3>
+          </div>
+          <p>Decisioni, regole, voce: imposte dall'esterno. La persona è ridotta a strumento, a proprietà.</p>
+        </div>
+        <div class="arr">→</div>
+        <div class="pole right">
+          <div>
+            <div class="label">Autonomia</div>
+            <h3>Capacità di autodeterminarsi.</h3>
+          </div>
+          <p>Riconquista dell'umanità. La persona diventa fonte delle proprie scelte e della propria storia.</p>
+        </div>
+      </div>
+    </div>
+    <div class="corner-section">Atto I</div>
+    <div class="corner-num">03 / 14</div>
+  </section>
+
+  <!-- ===== 4 — UNA PAROLA CHE SI ALLARGA ===== -->
+  <section id="s4" class="slide" data-label="04 Una parola che si allarga">
+    <div class="frame">
+      <div class="eyebrow">I · Una parola che si allarga</div>
+      <div class="rule"></div>
+      <div class="h-title" style="margin-top:40px;max-width:1500px;">
+        Da atto giuridico a <span class="accent-italic">orizzonte</span> della modernità.
+      </div>
+      <div class="grow" style="margin-top:60px;display:flex;align-items:center;">
+        <div class="ladder" style="width:100%;">
+          <div class="step"><div class="era">Roma antica</div><div class="what">Atto giuridico — il padre libera il figlio dalla propria autorità.</div></div>
+          <div class="step"><div class="era">Modernità</div><div class="what">Lotta per la libertà, dignità umana, riconoscimento.</div></div>
+          <div class="step"><div class="era">Sociale · politica</div><div class="what">Liberazione da ogni forma di oppressione, esclusione, discriminazione.</div></div>
+          <div class="step"><div class="era">Pedagogia</div><div class="what">Obiettivo educativo: formare persone libere, consapevoli, partecipi.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="corner-section">Atto I</div>
+    <div class="corner-num">04 / 14</div>
+  </section>
+
+  <!-- ===== 5 — FREIRE ===== -->
+  <section id="s5" class="slide" data-label="05 Paulo Freire">
+    <div class="frame">
+      <div class="eyebrow">II · Pedagogia degli oppressi</div>
+      <div class="rule"></div>
+      <div class="grow row gap-l" style="align-items:center;margin-top:40px;">
+        <div class="freire-portrait">
+          <div class="cap">Paulo Freire<br/>1921 — 1997</div>
+        </div>
+        <div class="col" style="flex:1;">
+          <div class="pull-quote">
+            <span class="mark">«</span>L'educazione diventa un atto di <em style="font-style:italic;color:var(--terra);">deposito</em>, in cui gli studenti sono i depositari e l'insegnante è colui che deposita.<span class="mark">»</span>
+          </div>
+          <div class="attribution">Pedagogia degli oppressi · 1968</div>
+        </div>
+      </div>
+    </div>
+    <div class="corner-section">Atto II</div>
+    <div class="corner-num">05 / 14</div>
+  </section>
+
+  <!-- ===== 6 — MODELLO BANCARIO vs DIALOGICO ===== -->
+  <section id="s6" class="slide" data-label="06 Il modello bancario">
+    <div class="frame">
+      <div class="eyebrow">II · Due modelli a confronto</div>
+      <div class="rule"></div>
+      <div class="h-title" style="margin:32px 0 40px 0;">Il sapere si <span class="accent-italic">deposita</span> o si <span class="accent-italic">costruisce</span>?</div>
+      <div class="compare grow">
+        <div class="col-c">
+          <span class="tag">Modello bancario</span>
+          <h3>L'aula come deposito.</h3>
+          <ul>
+            <li>L'insegnante <i>versa</i> conoscenze.</li>
+            <li>Lo studente è contenitore vuoto.</li>
+            <li>Sapere come oggetto da custodire.</li>
+            <li>Riproduce le condizioni di oppressione.</li>
+          </ul>
+        </div>
+        <div class="col-c">
+          <span class="tag">Educazione dialogica</span>
+          <h3>L'aula come pratica di libertà.</h3>
+          <ul>
+            <li>Dialogo, partecipazione, riflessione critica.</li>
+            <li>Lo studente è soggetto del proprio apprendere.</li>
+            <li>Sapere come processo condiviso.</li>
+            <li>Apre la via alla coscientizzazione.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="corner-section">Atto II</div>
+    <div class="corner-num">06 / 14</div>
+  </section>
+
+  <!-- ===== 7 — TRE PRINCIPI ===== -->
+  <section id="s7" class="slide" data-label="07 Educazione come pratica di libertà">
+    <div class="frame">
+      <div class="eyebrow">II · Tre principi freiriani</div>
+      <div class="rule"></div>
+      <div class="h-title" style="margin:32px 0 80px 0;max-width:1500px;">L'educazione come <span class="accent-italic">pratica di libertà</span>.</div>
+      <div class="three-up grow" style="align-content:start;">
+        <div class="card">
+          <div class="num">01</div>
+          <h4>Dialogo</h4>
+          <p>Insegnante e studente costruiscono insieme il significato. Nessuno insegna a nessuno: si impara mediati dal mondo.</p>
+        </div>
+        <div class="card">
+          <div class="num">02</div>
+          <h4>Partecipazione</h4>
+          <p>L'apprendimento è atto politico. La voce dello studente entra nella stanza, e la trasforma.</p>
+        </div>
+        <div class="card">
+          <div class="num">03</div>
+          <h4>Riflessione critica</h4>
+          <p>Leggere il mondo prima della parola. Interrogare le cause della propria condizione, per poterla cambiare.</p>
+        </div>
+      </div>
+    </div>
+    <div class="corner-section">Atto II</div>
+    <div class="corner-num">07 / 14</div>
+  </section>
+
+  <!-- ===== 8 — MINI-GIOCO ===== -->
+  <section id="s8" class="slide" data-label="08 Esperimento – Versa il sapere">
+    <div class="frame" style="padding-bottom:60px;">
+      <div class="eyebrow">II · Esperimento interattivo</div>
+      <div class="rule"></div>
+      <div class="h-title" style="margin:24px 0 8px 0;">Versa il <span class="accent-italic">sapere</span>.</div>
+      <div class="body-m" style="margin-bottom:24px;max-width:1500px;">
+        Clicca sul docente in entrambe le aule. Osserva cosa cambia.
+      </div>
+      <div class="game-wrap">
+        <!-- BANK SIDE -->
+        <div class="game-side">
+          <div class="title">Aula bancaria</div>
+          <div class="subtitle">Sapere come trasferimento.</div>
+          <div class="stage" id="bankStage">
+            <div class="teacher" id="bankTeacher" style="cursor:pointer;">
+              <div class="head"></div>
+              <div class="body"></div>
+              <div class="label">↓ clicca</div>
+            </div>
+            <div class="students">
+              <div class="student"><div class="head"></div><div class="vessel"><div class="fill" id="bf1"></div></div></div>
+              <div class="student"><div class="head"></div><div class="vessel"><div class="fill" id="bf2"></div></div></div>
+              <div class="student"><div class="head"></div><div class="vessel"><div class="fill" id="bf3"></div></div></div>
+            </div>
+          </div>
+          <div class="game-controls">
+            <span class="meter-label" style="text-align:left;">Coscienza</span>
+            <div class="meter"><div class="bar" id="bankMeter"></div></div>
+            <span class="meter-label" id="bankPct">0%</span>
+          </div>
+          <div class="body-m" style="margin-top:14px;font-size:24px;color:var(--muted);font-style:italic;font-family:'Fraunces',serif;">
+            I contenitori si riempiono. La coscienza non cresce.
+          </div>
+        </div>
+        <!-- DIALOG SIDE -->
+        <div class="game-side">
+          <div class="title">Aula dialogica</div>
+          <div class="subtitle">Sapere come incontro.</div>
+          <div class="stage" id="dlgStage">
+            <svg class="dialog-svg" id="dlgSvg" viewBox="0 0 800 600" preserveAspectRatio="none">
+              <g stroke="#9a4a2a" stroke-width="2" fill="none" opacity="0.7">
+                <path d="M400,140 Q250,300 200,470" stroke-dasharray="4 6"/>
+                <path d="M400,140 Q400,300 400,470" stroke-dasharray="4 6"/>
+                <path d="M400,140 Q550,300 600,470" stroke-dasharray="4 6"/>
+                <path d="M200,470 Q300,420 400,470" stroke-dasharray="4 6"/>
+                <path d="M400,470 Q500,420 600,470" stroke-dasharray="4 6"/>
+                <path d="M200,470 Q400,360 600,470" stroke-dasharray="4 6"/>
+              </g>
+            </svg>
+            <div class="teacher" id="dlgTeacher" style="cursor:pointer;">
+              <div class="head"></div>
+              <div class="body"></div>
+              <div class="label">↓ clicca</div>
+            </div>
+            <div class="students">
+              <div class="student" style="position:relative;">
+                <div class="face"><span class="mouth" id="m1"></span></div>
+                <div class="vessel"><div class="fill dialog" id="df1"></div></div>
+                <div class="lightbulb" id="lb1"></div>
+              </div>
+              <div class="student" style="position:relative;">
+                <div class="face"><span class="mouth" id="m2"></span></div>
+                <div class="vessel"><div class="fill dialog" id="df2"></div></div>
+                <div class="lightbulb" id="lb2"></div>
+              </div>
+              <div class="student" style="position:relative;">
+                <div class="face"><span class="mouth" id="m3"></span></div>
+                <div class="vessel"><div class="fill dialog" id="df3"></div></div>
+                <div class="lightbulb" id="lb3"></div>
+              </div>
+            </div>
+          </div>
+          <div class="game-controls">
+            <span class="meter-label" style="text-align:left;">Coscienza</span>
+            <div class="meter"><div class="bar" id="dlgMeter"></div></div>
+            <span class="meter-label" id="dlgPct">0%</span>
+          </div>
+          <div class="body-m" style="margin-top:14px;font-size:24px;color:var(--terra);font-style:italic;font-family:'Fraunces',serif;">
+            Il dialogo circola. La coscienza si accende.
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="corner-num">08 / 14</div>
+  </section>
+
+  <!-- ===== 9 — COSCIENTIZZAZIONE ===== -->
+  <section id="s9" class="slide dark" data-label="09 Coscientizzazione">
+    <div class="frame">
+      <div class="eyebrow">II · Concetto chiave</div>
+      <div class="rule"></div>
+      <div class="grow" style="display:flex;flex-direction:column;justify-content:center;">
+        <div class="word-big">cosci<em>ent</em>izzazione</div>
+        <div class="pt">port. <em>conscientização</em> · p. freire</div>
+        <div class="gloss" style="color:#d6c5ad;">
+          Il processo con cui una persona diventa consapevole della propria condizione e impara a cambiarla.<br/>
+          <span style="color:var(--ochre);">La liberazione non è individuale: è collettiva.</span>
+        </div>
+      </div>
+    </div>
+    <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto II</div>
+    <div class="corner-num">09 / 14</div>
+  </section>
+
+  <!-- ===== 10 — VULNERABILITA ≠ FRAGILITA ===== -->
+  <section id="s10" class="slide" data-label="10 Vulnerabilità non è fragilità">
+    <div class="frame">
+      <div class="eyebrow">II · Una distinzione necessaria</div>
+      <div class="rule"></div>
+      <div class="h-title" style="margin:32px 0 48px 0;max-width:1600px;">
+        Gli oppressi non sono <span class="accent-italic">fragili</span>.<br/>
+        Sono <span class="accent-italic">vulnerabili</span>.
+      </div>
+      <div class="vs-table grow" style="align-self:stretch;">
+        <div class="head">
+          <h3>Fragilità</h3>
+          <div class="sub">Condizione interna</div>
+        </div>
+        <div class="head">
+          <h3>Vulnerabilità</h3>
+          <div class="sub">Condizione relazionale</div>
+        </div>
+        <div class="cell">Debolezza intrinseca, strutturale.</div>
+        <div class="cell">Dipende dal contesto sociale, economico, culturale.</div>
+        <div class="cell">Percepita come poco modificabile.</div>
+        <div class="cell">Temporanea — può essere trasformata.</div>
+        <div class="cell">Connotazione statica, identitaria.</div>
+        <div class="cell">Maggiore esposizione al rischio, ma anche al cambiamento.</div>
+      </div>
+      <div class="body-m" style="margin-top:32px;font-style:italic;font-family:'Fraunces',serif;font-size:30px;">
+        Proprio perché vulnerabili, gli oppressi possono sviluppare coscienza critica — e emanciparsi.
+      </div>
+    </div>
+    <div class="corner-section">Atto II</div>
+    <div class="corner-num">10 / 14</div>
+  </section>
+
+  <!-- ===== 11 — MALALA ===== -->
+  <section id="s11" class="slide" data-label="11 Malala Yousafzai">
+    <div class="frame">
+      <div class="eyebrow">III · Volti dell'emancipazione</div>
+      <div class="rule"></div>
+      <div class="figure-slide" style="margin-top:40px;">
+        <div class="figure-portrait">
+          <div class="cap">[ ritratto · Malala Yousafzai ]<br/>foto da inserire</div>
+        </div>
+        <div class="figure-side">
+          <h2>Malala Yousafzai</h2>
+          <div class="years">PAKISTAN · n. 1997</div>
+          <p>Cresciuta sotto il controllo dei talebani, ha rivendicato pubblicamente il diritto delle bambine all'istruzione. Sopravvissuta a un attentato nel 2012, è diventata simbolo globale della lotta per l'educazione come strumento di trasformazione sociale.</p>
+          <div class="timeline">
+            <div class="row-t"><div class="yr">2008</div><div class="ev">Inizia a denunciare la chiusura delle scuole femminili nello Swat.</div></div>
+            <div class="row-t"><div class="yr">2012</div><div class="ev">Sopravvive a un attentato per il suo impegno educativo.</div></div>
+            <div class="row-t"><div class="yr">2014</div><div class="ev">Premio Nobel per la Pace — la più giovane di sempre.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="corner-section">Atto III</div>
+    <div class="corner-num">11 / 14</div>
+  </section>
+
+  <!-- ===== 12 — ALBRIGHT ===== -->
+  <section id="s12" class="slide" data-label="12 Madeleine Albright">
+    <div class="frame">
+      <div class="eyebrow">III · Volti dell'emancipazione</div>
+      <div class="rule"></div>
+      <div class="figure-slide" style="margin-top:40px;">
+        <div class="figure-portrait">
+          <div class="cap">[ ritratto · Madeleine Albright ]<br/>foto da inserire</div>
+        </div>
+        <div class="figure-side">
+          <h2>Madeleine Albright</h2>
+          <div class="years">CECOSLOVACCHIA → USA · 1937 — 2022</div>
+          <p>Nata Marie Jana Korbelová, fugge con la famiglia dalle persecuzioni della Seconda Guerra Mondiale. Trasforma una condizione di vulnerabilità e perdita in un percorso di leadership: diventerà la prima donna Segretario di Stato degli Stati Uniti.</p>
+          <div class="timeline">
+            <div class="row-t"><div class="yr">1948</div><div class="ev">Fugge da Praga con la famiglia per ragioni politiche.</div></div>
+            <div class="row-t"><div class="yr">1976</div><div class="ev">Dottorato — istruzione come motore di riscatto.</div></div>
+            <div class="row-t"><div class="yr">1997</div><div class="ev">Prima donna Segretario di Stato degli Stati Uniti.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="corner-section">Atto III</div>
+    <div class="corner-num">12 / 14</div>
+  </section>
+
+  <!-- ===== 13 — DONNE ===== -->
+  <section id="s13" class="slide" data-label="13 Emancipazione femminile">
+    <div class="frame" style="padding-bottom:140px;">
+      <div class="eyebrow">IV · Emancipazione femminile</div>
+      <div class="rule"></div>
+      <div class="h-title" style="margin:32px 0 48px 0;max-width:1700px;">
+        Per molte donne il percorso è <span class="accent-italic">più ripido</span>. Quattro ragioni che si sommano.
+      </div>
+      <div class="factor-grid" style="align-content:start;">
+        <div class="factor">
+          <div class="num">— 01 —</div>
+          <h4>Storia di disuguaglianza</h4>
+          <p>Per secoli escluse da istruzione, lavoro autonomo, partecipazione politica. Le strutture lasciano tracce.</p>
+        </div>
+        <div class="factor">
+          <div class="num">— 02 —</div>
+          <h4>Stereotipi di genere</h4>
+          <p>Ruoli predefiniti — cura, sacrificio, minore ambizione. Uscirne incontra resistenze esterne <em>e</em> interne.</p>
+        </div>
+        <div class="factor">
+          <div class="num">— 03 —</div>
+          <h4>Asimmetria di opportunità</h4>
+          <p>Meno accesso a risorse economiche, posizioni di potere, reti di supporto. Si parte con meno strumenti.</p>
+        </div>
+        <div class="factor">
+          <div class="num">— 04 —</div>
+          <h4>Doppia pressione</h4>
+          <p>Affermarsi come individui autonomi <em>e</em> rispondere alle aspettative tradizionali. Tenere insieme entrambe.</p>
+        </div>
+      </div>
+      <div class="body-m" style="margin-top:32px;margin-bottom:64px;font-family:'Fraunces',serif;font-style:italic;font-size:30px;color:var(--ink);">
+        Quando una donna si emancipa, diventa modello per altre — e il cambiamento attraversa famiglie, comunità, generazioni.
+      </div>
+    </div>
+    <div class="corner-section">Atto IV</div>
+    <div class="corner-num">13 / 14</div>
+  </section>
+
+  <!-- ===== 14 — FUTURO ===== -->
+  <section id="s14" class="slide terra" data-label="14 Verso il futuro">
+    <div class="frame">
+      <div class="eyebrow">V · Verso il futuro</div>
+      <div class="rule"></div>
+      <div class="grow" style="display:flex;flex-direction:column;justify-content:center;">
+        <div class="closer">
+          La pedagogia interculturale<br/>
+          rende l'emancipazione un <em>processo condiviso</em> —<br/>
+          non più solo una conquista individuale.
+        </div>
+        <div class="end-mark">— educazione · intercultura · futuro</div>
+        <div class="cite-film">cfr. C'è ancora domani · Paola Cortellesi · 2023</div>
+      </div>
+    </div>
+    <div class="signoff">grazie.</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.7);">14 / 14</div>
+  </section>
+
+</deck-stage>
+
+<script>
+/* ====== MINI-GIOCO ====== */
+(function(){
+  // BANK
+  let bankClicks = 0;
+  const bankFills = ['bf1','bf2','bf3'].map(id=>document.getElementById(id));
+  const bankMeter = document.getElementById('bankMeter');
+  const bankPct = document.getElementById('bankPct');
+  const bankTeacher = document.getElementById('bankTeacher');
+  const bankStage = document.getElementById('bankStage');
+
+  function spawnCoin(stage, targetEl, onArrive){
+    const stageRect = stage.getBoundingClientRect();
+    const targetRect = targetEl.getBoundingClientRect();
+    const startX = stageRect.width/2 - 12;
+    const startY = 80;
+    const endX = (targetRect.left - stageRect.left) + targetRect.width/2 - 12;
+    const endY = (targetRect.top - stageRect.top) + targetRect.height/2 - 12;
+    const coin = document.createElement('div');
+    coin.className = 'coin';
+    coin.style.left = startX + 'px';
+    coin.style.top = startY + 'px';
+    coin.style.transition = 'transform 0.7s cubic-bezier(.45,.05,.55,.95), opacity 0.2s';
+    stage.appendChild(coin);
+    requestAnimationFrame(()=>{
+      coin.style.transform = `translate(${endX-startX}px, ${endY-startY}px)`;
+    });
+    setTimeout(()=>{
+      coin.style.opacity = '0';
+      onArrive && onArrive();
+      setTimeout(()=>coin.remove(), 250);
+    }, 700);
+  }
+
+  bankTeacher.addEventListener('click', ()=>{
+    bankClicks++;
+    const target = bankFills[bankClicks % 3];
+    spawnCoin(bankStage, target.parentElement, ()=>{
+      const cur = parseFloat(target.style.height||'0');
+      target.style.height = Math.min(100, cur + 28) + '%';
+    });
+    // meter never grows past tiny
+    const consciousness = Math.min(8, bankClicks*1);
+    bankMeter.style.width = consciousness + '%';
+    bankPct.textContent = consciousness + '%';
+  });
+
+  // DIALOG
+  let dlgClicks = 0;
+  const dlgFills = ['df1','df2','df3'].map(id=>document.getElementById(id));
+  const lbs = ['lb1','lb2','lb3'].map(id=>document.getElementById(id));
+  const mouths = ['m1','m2','m3'].map(id=>document.getElementById(id));
+  const dlgMeter = document.getElementById('dlgMeter');
+  const dlgPct = document.getElementById('dlgPct');
+  const dlgTeacher = document.getElementById('dlgTeacher');
+  const dlgSvg = document.getElementById('dlgSvg');
+
+  dlgTeacher.addEventListener('click', ()=>{
+    dlgClicks++;
+    dlgSvg.classList.add('on');
+    // fill slowly
+    dlgFills.forEach((f,i)=>{
+      const cur = parseFloat(f.style.height||'0');
+      f.style.height = Math.min(100, cur + 14) + '%';
+    });
+    // meter grows fast
+    const consciousness = Math.min(100, dlgClicks*18);
+    dlgMeter.style.width = consciousness + '%';
+    dlgPct.textContent = consciousness + '%';
+    // light bulbs and smiles staged
+    if(dlgClicks>=2){ lbs[0].classList.add('on'); mouths[0].classList.add('smile'); }
+    if(dlgClicks>=3){ lbs[1].classList.add('on'); mouths[1].classList.add('smile'); }
+    if(dlgClicks>=4){ lbs[2].classList.add('on'); mouths[2].classList.add('smile'); }
+  });
+})();
+</script>
+
+</body>
+</html>
