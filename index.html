@@ -513,20 +513,20 @@
   }
 
   /* ===== SLIDE 14: FUTURO ===== */
-  #s14 .closer{
+  #s15 .closer{
     font-family:'Fraunces',serif;font-weight:300;font-size:96px;line-height:1.1;
     letter-spacing:-0.025em;color:var(--paper);max-width:1500px;
   }
-  #s14 .closer em{font-style:italic;color:var(--ochre);font-weight:400;}
-  #s14 .end-mark{
+  #s15 .closer em{font-style:italic;color:var(--ochre);font-weight:400;}
+  #s15 .end-mark{
     font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;
     text-transform:uppercase;color:rgba(244,236,223,0.7);margin-top:64px;
   }
-  #s14 .signoff{
+  #s15 .signoff{
     position:absolute;left:120px;bottom:80px;
     font-family:'Fraunces',serif;font-style:italic;font-size:38px;color:var(--ochre);
   }
-  #s14 .cite-film{
+  #s15 .cite-film{
     font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.14em;
     text-transform:uppercase;color:rgba(244,236,223,0.5);margin-top:16px;
   }
@@ -548,38 +548,80 @@
   .freire-portrait .cap{position:relative;z-index:1;}
 
   /* ===== SLIDE 15: TRAILER ===== */
-  #s15 .trailer-wrap{
+  #s16 .trailer-wrap{
     flex:1;min-height:0;position:relative;
   }
-  #s15 .trailer-wrap iframe{
+  #s16 .trailer-wrap iframe{
     position:absolute;inset:0;width:100%;height:100%;border:0;display:block;
   }
-  #s15 .film-title{
+  #s16 .film-title{
     font-family:'Fraunces',serif;font-weight:300;font-style:italic;
     font-size:80px;line-height:1.0;letter-spacing:-0.025em;
     color:var(--ochre);
   }
-  #s15 .film-meta{
+  #s16 .film-meta{
     font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
     text-transform:uppercase;color:rgba(244,236,223,0.5);margin-top:20px;
   }
 
   /* ===== SLIDE 16: MORALE ===== */
-  #s16 .moral-body{
+  #s17 .moral-body{
     font-family:'Fraunces',serif;font-weight:300;font-size:52px;line-height:1.45;
     letter-spacing:-0.01em;color:var(--paper);max-width:1580px;
   }
-  #s16 .moral-body em{font-style:italic;color:var(--ochre);font-weight:400;}
-  #s16 .moral-body strong{font-style:normal;font-weight:500;color:var(--paper);}
-  #s16 .moral-divider{
+  #s17 .moral-body em{font-style:italic;color:var(--ochre);font-weight:400;}
+  #s17 .moral-body strong{font-style:normal;font-weight:500;color:var(--paper);}
+  #s17 .moral-divider{
     width:80px;height:2px;background:var(--ochre);margin:56px 0;
   }
-  #s16 .moral-close{
+  #s17 .moral-close{
     font-family:'Fraunces',serif;font-weight:300;font-style:italic;
     font-size:44px;line-height:1.4;letter-spacing:-0.01em;
     color:rgba(244,236,223,0.75);max-width:1400px;
   }
-  #s16 .moral-close em{color:var(--ochre);font-style:italic;}
+  #s17 .moral-close em{color:var(--ochre);font-style:italic;}
+
+  /* ===== SLIDE 13: FRIDA KAHLO ===== */
+  #s13 .frida-layout{
+    display:grid;grid-template-columns:680px 1fr;gap:80px;flex:1;min-height:0;
+  }
+  #s13 .frida-mosaic{
+    display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;
+    gap:6px;background:var(--ink);
+  }
+  #s13 .frida-mosaic img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    filter:grayscale(0%);transition:filter 0.3s;
+  }
+  #s13 .frida-mosaic img.bw{filter:grayscale(100%);}
+  #s13 .frida-side h2{
+    font-family:'Fraunces',serif;font-weight:400;font-size:88px;line-height:0.95;
+    margin:0 0 12px 0;letter-spacing:-0.025em;
+  }
+  #s13 .frida-side .years{
+    font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--terra);
+    letter-spacing:0.14em;margin-bottom:40px;
+  }
+  #s13 .frida-themes{
+    display:flex;flex-direction:column;gap:0;
+    border-top:1px solid var(--rule);
+  }
+  #s13 .frida-theme{
+    padding:22px 0;border-bottom:1px solid var(--rule);
+    display:grid;grid-template-columns:36px 1fr;gap:20px;align-items:start;
+  }
+  #s13 .frida-theme .n{
+    font-family:'JetBrains Mono',monospace;font-size:24px;
+    color:var(--terra);letter-spacing:0.1em;padding-top:4px;
+  }
+  #s13 .frida-theme h4{
+    font-family:'Fraunces',serif;font-weight:400;font-size:36px;
+    line-height:1.1;margin:0 0 8px 0;letter-spacing:-0.01em;
+  }
+  #s13 .frida-theme p{
+    font-family:'Inter',sans-serif;font-size:24px;line-height:1.45;
+    color:var(--ink-2);margin:0;
+  }
 </style>
 </head>
 <body>
@@ -600,7 +642,7 @@
       </div>
     </div>
     <div class="meta">
-      <span>Lezione · <b>16 slide</b></span>
+      <span>Lezione · <b>17 slide</b></span>
       <span>Durata · <b>10 minuti</b></span>
     </div>
   </section>
@@ -631,7 +673,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">02 / 16</div>
+    <div class="corner-num">02 / 17</div>
   </section>
 
   <!-- ===== 3 — DA OGGETTO A SOGGETTO ===== -->
@@ -662,7 +704,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">03 / 16</div>
+    <div class="corner-num">03 / 17</div>
   </section>
 
   <!-- ===== 4 — UNA PAROLA CHE SI ALLARGA ===== -->
@@ -683,7 +725,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">04 / 16</div>
+    <div class="corner-num">04 / 17</div>
   </section>
 
   <!-- ===== 5 — FREIRE ===== -->
@@ -705,7 +747,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">05 / 16</div>
+    <div class="corner-num">05 / 17</div>
   </section>
 
   <!-- ===== 6 — MODELLO BANCARIO vs DIALOGICO ===== -->
@@ -738,7 +780,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">06 / 16</div>
+    <div class="corner-num">06 / 17</div>
   </section>
 
   <!-- ===== 7 — TRE PRINCIPI ===== -->
@@ -766,7 +808,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">07 / 16</div>
+    <div class="corner-num">07 / 17</div>
   </section>
 
   <!-- ===== 8 — MINI-GIOCO ===== -->
@@ -864,7 +906,7 @@
         <span class="game-reset-hint">clicca su entrambi i docenti per confrontare i modelli</span>
       </div>
     </div>
-    <div class="corner-num">08 / 16</div>
+    <div class="corner-num">08 / 17</div>
   </section>
 
   <!-- ===== 9 — COSCIENTIZZAZIONE ===== -->
@@ -882,7 +924,7 @@
       </div>
     </div>
     <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto II</div>
-    <div class="corner-num">09 / 16</div>
+    <div class="corner-num">09 / 17</div>
   </section>
 
   <!-- ===== 10 — VULNERABILITA ≠ FRAGILITA ===== -->
@@ -915,7 +957,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">10 / 16</div>
+    <div class="corner-num">10 / 17</div>
   </section>
 
   <!-- ===== 11 — MALALA ===== -->
@@ -941,7 +983,7 @@
       </div>
     </div>
     <div class="corner-section">Atto III</div>
-    <div class="corner-num">11 / 16</div>
+    <div class="corner-num">11 / 17</div>
   </section>
 
   <!-- ===== 12 — ALBRIGHT ===== -->
@@ -967,11 +1009,63 @@
       </div>
     </div>
     <div class="corner-section">Atto III</div>
-    <div class="corner-num">12 / 16</div>
+    <div class="corner-num">12 / 17</div>
   </section>
 
-  <!-- ===== 13 — DONNE ===== -->
-  <section id="s13" class="slide" data-label="13 Emancipazione femminile">
+  <!-- ===== 13 — FRIDA KAHLO ===== -->
+  <section id="s13" class="slide" data-label="13 Frida Kahlo">
+    <div class="frame">
+      <div class="eyebrow">III · Volti dell'emancipazione</div>
+      <div class="rule"></div>
+      <div class="frida-layout" style="margin-top:32px;">
+        <div class="frida-mosaic">
+          <img src="images/frida-portrait.jpg" alt="Frida Kahlo ritratto" class="bw" onerror="this.style.display='none'">
+          <img src="images/frida-selfportrait.jpg" alt="Autoritratto Frida Kahlo" onerror="this.style.display='none'">
+          <img src="images/frida-bench.jpg" alt="Frida Kahlo su panchina" onerror="this.style.display='none'">
+          <img src="images/frida-twofridas.jpg" alt="Le due Frida" onerror="this.style.display='none'">
+        </div>
+        <div class="frida-side">
+          <h2>Frida Kahlo</h2>
+          <div class="years">MESSICO · 1907 — 1954</div>
+          <div class="frida-themes">
+            <div class="frida-theme">
+              <div class="n">01</div>
+              <div>
+                <h4>Rompe gli schemi</h4>
+                <p>Mostra il corpo senza filtri: fragilità, dolore, cicatrici. Ciò che la società chiama debolezza diventa forza e consapevolezza.</p>
+              </div>
+            </div>
+            <div class="frida-theme">
+              <div class="n">02</div>
+              <div>
+                <h4>Indipendenza radicale</h4>
+                <p>Relazioni libere, posizione politica, identità propria. Si rifiuta di essere definita dal ruolo di moglie o dalle aspettative sociali.</p>
+              </div>
+            </div>
+            <div class="frida-theme">
+              <div class="n">03</div>
+              <div>
+                <h4>Identità culturale come atto politico</h4>
+                <p>Abiti tradizionali messicani, radici indigene, orgoglio di appartenenza. Emancipazione come individuo oltre che come donna.</p>
+              </div>
+            </div>
+            <div class="frida-theme">
+              <div class="n">04</div>
+              <div>
+                <h4>Voce dell'esperienza femminile</h4>
+                <p>Porta al centro dell'arte corpo, maternità, sofferenza, identità — temi spesso taciuti. L'arte come atto di liberazione.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="corner-section">Atto III</div>
+    <div class="corner-num">13 / 17</div>
+  </section>
+
+  <!-- ===== 14 — DONNE ===== -->
+  <section id="s15" class="slide" data-label="14 Emancipazione femminile">
     <div class="frame" style="padding-bottom:140px;">
       <div class="eyebrow">IV · Emancipazione femminile</div>
       <div class="rule"></div>
@@ -1005,11 +1099,11 @@
       </div>
     </div>
     <div class="corner-section">Atto IV</div>
-    <div class="corner-num">13 / 16</div>
+    <div class="corner-num">14 / 17</div>
   </section>
 
   <!-- ===== 14 — FUTURO ===== -->
-  <section id="s14" class="slide terra" data-label="14 Verso il futuro">
+  <section id="s15" class="slide terra" data-label="14 Verso il futuro">
     <div class="frame">
       <div class="eyebrow">V · Verso il futuro</div>
       <div class="rule"></div>
@@ -1024,11 +1118,11 @@
       </div>
     </div>
     <div class="signoff">grazie.</div>
-    <div class="corner-num" style="color:rgba(244,236,223,0.7);">14 / 16</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.7);">15 / 17</div>
   </section>
 
   <!-- ===== 15 — TRAILER C'È ANCORA DOMANI ===== -->
-  <section id="s15" class="slide dark" data-label="15 C'è ancora domani">
+  <section id="s16" class="slide dark" data-label="15 C'è ancora domani">
     <div class="frame" style="padding:80px 120px 80px 120px;">
       <div class="eyebrow">V · Film</div>
       <div class="rule"></div>
@@ -1047,12 +1141,12 @@
       </div>
     </div>
     <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto V</div>
-    <div class="corner-num" style="color:rgba(244,236,223,0.6);">15 / 16</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.6);">16 / 17</div>
   </section>
 
 
   <!-- ===== 16 — MORALE DEL FILM ===== -->
-  <section id="s16" class="slide dark" data-label="16 La morale">
+  <section id="s17" class="slide dark" data-label="16 La morale">
     <div class="frame" style="padding:90px 140px 100px 140px;">
       <div class="eyebrow">V · La morale</div>
       <div class="rule"></div>
@@ -1073,7 +1167,7 @@
       </div>
     </div>
     <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto V</div>
-    <div class="corner-num" style="color:rgba(244,236,223,0.6);">16 / 16</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.6);">17 / 17</div>
   </section>
 
 </deck-stage>
