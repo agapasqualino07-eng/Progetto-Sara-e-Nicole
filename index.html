@@ -570,63 +570,44 @@
   }
 
   /* ===== SLIDE 16: MORALE ===== */
-  #s17 .moral-body{
+  #s16 .moral-body{
     font-family:'Fraunces',serif;font-weight:300;font-size:52px;line-height:1.45;
     letter-spacing:-0.01em;color:var(--paper);max-width:1580px;
   }
-  #s17 .moral-body em{font-style:italic;color:var(--ochre);font-weight:400;}
-  #s17 .moral-body strong{font-style:normal;font-weight:500;color:var(--paper);}
-  #s17 .moral-divider{
+  #s16 .moral-body em{font-style:italic;color:var(--ochre);font-weight:400;}
+  #s16 .moral-body strong{font-style:normal;font-weight:500;color:var(--paper);}
+  #s16 .moral-divider{
     width:80px;height:2px;background:var(--ochre);margin:56px 0;
   }
-  #s17 .moral-close{
+  #s16 .moral-close{
     font-family:'Fraunces',serif;font-weight:300;font-style:italic;
     font-size:44px;line-height:1.4;letter-spacing:-0.01em;
     color:rgba(244,236,223,0.75);max-width:1400px;
   }
-  #s17 .moral-close em{color:var(--ochre);font-style:italic;}
+  #s16 .moral-close em{color:var(--ochre);font-style:italic;}
 
-  /* ===== SLIDE 13: FRIDA KAHLO ===== */
-  #s16 .frida-layout{
-    display:grid;grid-template-columns:680px 1fr;gap:80px;flex:1;min-height:0;
+  /* ===== SLIDE 18: FRIDA GALLERY ===== */
+  .frida-gallery{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:48px;
   }
-  #s16 .frida-mosaic{
-    display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;
-    gap:6px;background:var(--ink);
+  .frida-gal-col{display:flex;flex-direction:column;gap:20px;}
+  .frida-gal-img{
+    flex:1;min-height:0;overflow:hidden;position:relative;
+    border:1px solid var(--rule);
   }
-  #s16 .frida-mosaic img{
-    width:100%;height:100%;object-fit:cover;display:block;
-    filter:grayscale(0%);transition:filter 0.3s;
+  .frida-gal-img img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center top;display:block;
   }
-  #s16 .frida-mosaic img.bw{filter:grayscale(100%);}
-  #s16 .frida-side h2{
-    font-family:'Fraunces',serif;font-weight:400;font-size:88px;line-height:0.95;
-    margin:0 0 12px 0;letter-spacing:-0.025em;
-  }
-  #s16 .frida-side .years{
-    font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--terra);
-    letter-spacing:0.14em;margin-bottom:40px;
-  }
-  #s16 .frida-themes{
-    display:flex;flex-direction:column;gap:0;
-    border-top:1px solid var(--rule);
-  }
-  #s16 .frida-theme{
-    padding:22px 0;border-bottom:1px solid var(--rule);
-    display:grid;grid-template-columns:36px 1fr;gap:20px;align-items:start;
-  }
-  #s16 .frida-theme .n{
-    font-family:'JetBrains Mono',monospace;font-size:24px;
-    color:var(--terra);letter-spacing:0.1em;padding-top:4px;
-  }
-  #s16 .frida-theme h4{
+  .frida-gal-text h4{
     font-family:'Fraunces',serif;font-weight:400;font-size:36px;
-    line-height:1.1;margin:0 0 8px 0;letter-spacing:-0.01em;
+    line-height:1.1;margin:0 0 12px 0;letter-spacing:-0.01em;color:var(--terra);
   }
-  #s16 .frida-theme p{
-    font-family:'Inter',sans-serif;font-size:24px;line-height:1.45;
+  .frida-gal-text p{
+    font-family:'Inter',sans-serif;font-size:24px;line-height:1.5;
     color:var(--ink-2);margin:0;
   }
+
 </style>
 </head>
 <body>
@@ -647,7 +628,7 @@
       </div>
     </div>
     <div class="meta">
-      <span>Lezione · <b>17 slide</b></span>
+      <span>Lezione · <b>18 slide</b></span>
       <span>Durata · <b>10 minuti</b></span>
     </div>
   </section>
@@ -678,7 +659,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">02 / 17</div>
+    <div class="corner-num">02 / 18</div>
   </section>
 
   <!-- ===== 3 — DA OGGETTO A SOGGETTO ===== -->
@@ -709,7 +690,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">03 / 17</div>
+    <div class="corner-num">03 / 18</div>
   </section>
 
   <!-- ===== 4 — UNA PAROLA CHE SI ALLARGA ===== -->
@@ -730,7 +711,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">04 / 17</div>
+    <div class="corner-num">04 / 18</div>
   </section>
 
   <!-- ===== 5 — FREIRE ===== -->
@@ -756,7 +737,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">05 / 17</div>
+    <div class="corner-num">05 / 18</div>
   </section>
 
   <!-- ===== 6 — MODELLO BANCARIO vs DIALOGICO ===== -->
@@ -789,7 +770,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">06 / 17</div>
+    <div class="corner-num">06 / 18</div>
   </section>
 
   <!-- ===== 7 — TRE PRINCIPI ===== -->
@@ -817,7 +798,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">07 / 17</div>
+    <div class="corner-num">07 / 18</div>
   </section>
 
   <!-- ===== 8 — MINI-GIOCO ===== -->
@@ -915,7 +896,7 @@
         <span class="game-reset-hint">clicca su entrambi i docenti per confrontare i modelli</span>
       </div>
     </div>
-    <div class="corner-num">08 / 17</div>
+    <div class="corner-num">08 / 18</div>
   </section>
 
   <!-- ===== 9 — COSCIENTIZZAZIONE ===== -->
@@ -933,7 +914,7 @@
       </div>
     </div>
     <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto II</div>
-    <div class="corner-num">09 / 17</div>
+    <div class="corner-num">09 / 18</div>
   </section>
 
   <!-- ===== 10 — VULNERABILITA ≠ FRAGILITA ===== -->
@@ -966,7 +947,7 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">10 / 17</div>
+    <div class="corner-num">10 / 18</div>
   </section>
 
   <!-- ===== 11 — MALALA ===== -->
@@ -992,7 +973,7 @@
       </div>
     </div>
     <div class="corner-section">Atto III</div>
-    <div class="corner-num">11 / 17</div>
+    <div class="corner-num">11 / 18</div>
   </section>
 
   <!-- ===== 12 — ALBRIGHT ===== -->
@@ -1018,7 +999,7 @@
       </div>
     </div>
     <div class="corner-section">Atto III</div>
-    <div class="corner-num">12 / 17</div>
+    <div class="corner-num">12 / 18</div>
   </section>
 
   <!-- ===== 14 — DONNE ===== -->
@@ -1056,7 +1037,7 @@
       </div>
     </div>
     <div class="corner-section">Atto IV</div>
-    <div class="corner-num">13 / 17</div>
+    <div class="corner-num">13 / 18</div>
   </section>
 
   <!-- ===== 14 — FUTURO ===== -->
@@ -1075,7 +1056,7 @@
       </div>
     </div>
     <div class="signoff">grazie.</div>
-    <div class="corner-num" style="color:rgba(244,236,223,0.7);">14 / 17</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.7);">14 / 18</div>
   </section>
 
   <!-- ===== 15 — TRAILER C'È ANCORA DOMANI ===== -->
@@ -1098,12 +1079,37 @@
       </div>
     </div>
     <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto V</div>
-    <div class="corner-num" style="color:rgba(244,236,223,0.6);">15 / 17</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.6);">15 / 18</div>
   </section>
 
 
-  <!-- ===== 16 — FRIDA KAHLO ===== -->
-  <section id="s16" class="slide" data-label="16 Frida Kahlo">
+  <!-- ===== 16 — MORALE DEL FILM ===== -->
+  <section id="s16" class="slide dark" data-label="16 La morale">
+    <div class="frame" style="padding:90px 140px 100px 140px;">
+      <div class="eyebrow">V · La morale</div>
+      <div class="rule"></div>
+      <div class="grow" style="display:flex;flex-direction:column;justify-content:center;">
+        <div class="moral-body">
+          L'emancipazione non è solo <em>liberarsi da una relazione oppressiva</em>,<br/>
+          ma acquisire coscienza dei propri <em>diritti</em> e del proprio <em>valore</em><br/>
+          all'interno della società.<br/><br/>
+          Il voto diventa il simbolo di una libertà più profonda, <em>collettiva</em>,<br/>
+          che non riguarda solo Delia — ma <em>tutte le donne</em>.
+        </div>
+        <div class="moral-divider"></div>
+        <div class="moral-close">
+          Il cambiamento più importante non è sempre il più evidente.<br/>
+          È quello che costruisce le basi per un futuro diverso:<br/>
+          <em>scegliere, partecipare, avere voce.</em>
+        </div>
+      </div>
+    </div>
+    <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto V</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.6);">16 / 18</div>
+  </section>
+
+  <!-- ===== 17 — FRIDA KAHLO ===== -->
+  <section id="s17" class="slide" data-label="17 Frida Kahlo">
     <div class="frame">
       <div class="eyebrow">V · Simbolo di emancipazione</div>
       <div class="rule"></div>
@@ -1125,33 +1131,47 @@
       </div>
     </div>
     <div class="corner-section">Atto V</div>
-    <div class="corner-num">16 / 17</div>
+    <div class="corner-num">17 / 18</div>
   </section>
 
-
-  <!-- ===== 17 — MORALE DEL FILM ===== -->
-  <section id="s17" class="slide dark" data-label="17 La morale">
-    <div class="frame" style="padding:90px 140px 100px 140px;">
-      <div class="eyebrow">V · La morale</div>
+  <!-- ===== 18 — FRIDA: LE OPERE ===== -->
+  <section id="s18" class="slide" data-label="18 Frida – perché è un simbolo">
+    <div class="frame">
+      <div class="eyebrow">V · Perché Frida è un simbolo di emancipazione</div>
       <div class="rule"></div>
-      <div class="grow" style="display:flex;flex-direction:column;justify-content:center;">
-        <div class="moral-body">
-          L'emancipazione non è solo <em>liberarsi da una relazione oppressiva</em>,<br/>
-          ma acquisire coscienza dei propri <em>diritti</em> e del proprio <em>valore</em><br/>
-          all'interno della società.<br/><br/>
-          Il voto diventa il simbolo di una libertà più profonda, <em>collettiva</em>,<br/>
-          che non riguarda solo Delia — ma <em>tutte le donne</em>.
+      <div class="h-section" style="margin:24px 0 40px 0;">L'arte come atto di <span class="accent-italic">liberazione</span>.</div>
+      <div class="frida-gallery grow">
+        <div class="frida-gal-col">
+          <div class="frida-gal-img">
+            <img src="images/frida-portrait.jpg" alt="Frida Kahlo – ritratto" onerror="this.style.display='none'">
+          </div>
+          <div class="frida-gal-text">
+            <h4>Il corpo come manifesto</h4>
+            <p>Baffi, sopracciglia folte, cicatrici senza ritocchi. Kahlo ridefinisce la bellezza femminile secondo i propri termini — non per compiacere lo sguardo altrui, ma per affermare la propria esistenza.</p>
+          </div>
         </div>
-        <div class="moral-divider"></div>
-        <div class="moral-close">
-          Il cambiamento più importante non è sempre il più evidente.<br/>
-          È quello che costruisce le basi per un futuro diverso:<br/>
-          <em>scegliere, partecipare, avere voce.</em>
+        <div class="frida-gal-col">
+          <div class="frida-gal-img">
+            <img src="images/frida-selfportrait.jpg" alt="Autoritratto Frida Kahlo" onerror="this.style.display='none'">
+          </div>
+          <div class="frida-gal-text">
+            <h4>L'identità come scelta politica</h4>
+            <p>Abiti tehuane, gioielli precolombiani, capelli intrecciati: orgoglio delle radici indigene messicane. Rifiuto dell'ideale europeo imposto. L'apparenza come atto di resistenza culturale.</p>
+          </div>
+        </div>
+        <div class="frida-gal-col">
+          <div class="frida-gal-img">
+            <img src="images/frida-twofridas.jpg" alt="Le due Frida – 1939" onerror="this.style.display='none'">
+          </div>
+          <div class="frida-gal-text">
+            <h4>Le due Frida · 1939</h4>
+            <p>Dipinto dopo il divorzio da Diego Rivera: due versioni di sé con cuori aperti e interconnessi. La scissione interiore resa visibile. La vulnerabilità non è debolezza — è coraggio di guardarsi dentro.</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto V</div>
-    <div class="corner-num" style="color:rgba(244,236,223,0.6);">17 / 17</div>
+    <div class="corner-section">Atto V</div>
+    <div class="corner-num">18 / 18</div>
   </section>
 
 </deck-stage>
