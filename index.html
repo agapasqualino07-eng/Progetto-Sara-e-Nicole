@@ -513,20 +513,20 @@
   }
 
   /* ===== SLIDE 14: FUTURO ===== */
-  #s15 .closer{
+  #s14 .closer{
     font-family:'Fraunces',serif;font-weight:300;font-size:96px;line-height:1.1;
     letter-spacing:-0.025em;color:var(--paper);max-width:1500px;
   }
-  #s15 .closer em{font-style:italic;color:var(--ochre);font-weight:400;}
-  #s15 .end-mark{
+  #s14 .closer em{font-style:italic;color:var(--ochre);font-weight:400;}
+  #s14 .end-mark{
     font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;
     text-transform:uppercase;color:rgba(244,236,223,0.7);margin-top:64px;
   }
-  #s15 .signoff{
+  #s14 .signoff{
     position:absolute;left:120px;bottom:80px;
     font-family:'Fraunces',serif;font-style:italic;font-size:38px;color:var(--ochre);
   }
-  #s15 .cite-film{
+  #s14 .cite-film{
     font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.14em;
     text-transform:uppercase;color:rgba(244,236,223,0.5);margin-top:16px;
   }
@@ -548,18 +548,18 @@
   .freire-portrait .cap{position:relative;z-index:1;}
 
   /* ===== SLIDE 15: TRAILER ===== */
-  #s16 .trailer-wrap{
-    flex:1;min-height:0;position:relative;
+  #s15 .trailer-wrap{
+    flex:1;min-height:0;width:100%;
   }
-  #s16 .trailer-wrap iframe{
-    position:absolute;inset:0;width:100%;height:100%;border:0;display:block;
+  #s15 .trailer-wrap iframe{
+    width:100%;height:100%;border:0;display:block;
   }
-  #s16 .film-title{
+  #s15 .film-title{
     font-family:'Fraunces',serif;font-weight:300;font-style:italic;
     font-size:80px;line-height:1.0;letter-spacing:-0.025em;
     color:var(--ochre);
   }
-  #s16 .film-meta{
+  #s15 .film-meta{
     font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
     text-transform:uppercase;color:rgba(244,236,223,0.5);margin-top:20px;
   }
@@ -582,43 +582,43 @@
   #s17 .moral-close em{color:var(--ochre);font-style:italic;}
 
   /* ===== SLIDE 13: FRIDA KAHLO ===== */
-  #s13 .frida-layout{
+  #s16 .frida-layout{
     display:grid;grid-template-columns:680px 1fr;gap:80px;flex:1;min-height:0;
   }
-  #s13 .frida-mosaic{
+  #s16 .frida-mosaic{
     display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;
     gap:6px;background:var(--ink);
   }
-  #s13 .frida-mosaic img{
+  #s16 .frida-mosaic img{
     width:100%;height:100%;object-fit:cover;display:block;
     filter:grayscale(0%);transition:filter 0.3s;
   }
-  #s13 .frida-mosaic img.bw{filter:grayscale(100%);}
-  #s13 .frida-side h2{
+  #s16 .frida-mosaic img.bw{filter:grayscale(100%);}
+  #s16 .frida-side h2{
     font-family:'Fraunces',serif;font-weight:400;font-size:88px;line-height:0.95;
     margin:0 0 12px 0;letter-spacing:-0.025em;
   }
-  #s13 .frida-side .years{
+  #s16 .frida-side .years{
     font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--terra);
     letter-spacing:0.14em;margin-bottom:40px;
   }
-  #s13 .frida-themes{
+  #s16 .frida-themes{
     display:flex;flex-direction:column;gap:0;
     border-top:1px solid var(--rule);
   }
-  #s13 .frida-theme{
+  #s16 .frida-theme{
     padding:22px 0;border-bottom:1px solid var(--rule);
     display:grid;grid-template-columns:36px 1fr;gap:20px;align-items:start;
   }
-  #s13 .frida-theme .n{
+  #s16 .frida-theme .n{
     font-family:'JetBrains Mono',monospace;font-size:24px;
     color:var(--terra);letter-spacing:0.1em;padding-top:4px;
   }
-  #s13 .frida-theme h4{
+  #s16 .frida-theme h4{
     font-family:'Fraunces',serif;font-weight:400;font-size:36px;
     line-height:1.1;margin:0 0 8px 0;letter-spacing:-0.01em;
   }
-  #s13 .frida-theme p{
+  #s16 .frida-theme p{
     font-family:'Inter',sans-serif;font-size:24px;line-height:1.45;
     color:var(--ink-2);margin:0;
   }
@@ -733,16 +733,20 @@
     <div class="frame">
       <div class="eyebrow">II · Pedagogia degli oppressi</div>
       <div class="rule"></div>
-      <div class="grow row gap-l" style="align-items:center;margin-top:40px;">
-        <div class="freire-portrait">
-          <img src="images/freire.png" alt="Paulo Freire" onerror="this.style.display='none'">
-          <div class="cap">Paulo Freire<br/>1921 — 1997</div>
+      <div class="figure-slide" style="margin-top:40px;">
+        <div class="figure-portrait">
+          <img src="images/freire.png" alt="Paulo Freire" onerror="this.style.display='none'" style="filter:grayscale(20%);">
+          <div class="cap">Paulo Freire</div>
         </div>
-        <div class="col" style="flex:1;">
-          <div class="pull-quote">
-            <span class="mark">«</span>L'educazione diventa un atto di <em style="font-style:italic;color:var(--terra);">deposito</em>, in cui gli studenti sono i depositari e l'insegnante è colui che deposita.<span class="mark">»</span>
+        <div class="figure-side">
+          <h2>Paulo Freire</h2>
+          <div class="years">BRASILE · 1921 — 1997</div>
+          <p>Pedagogista brasiliano, padre della pedagogia critica. Figlio della povertà del Nordest brasiliano, capì presto che l'analfabetismo non era ignoranza ma oppressione strutturale. La sua opera cambiò il modo di pensare all'educazione nel mondo intero.</p>
+          <div class="timeline">
+            <div class="row-t"><div class="yr">1947</div><div class="ev">Avvia programmi di alfabetizzazione nelle favelas del Recife.</div></div>
+            <div class="row-t"><div class="yr">1968</div><div class="ev">Pubblica <em>Pedagogia degli oppressi</em> — uno dei libri più letti del Novecento.</div></div>
+            <div class="row-t"><div class="yr">1980</div><div class="ev">Rientra in Brasile dopo 16 anni di esilio e continua la sua battaglia pedagogica.</div></div>
           </div>
-          <div class="attribution">Pedagogia degli oppressi · 1968</div>
         </div>
       </div>
     </div>
@@ -1096,47 +1100,21 @@
   <!-- ===== 16 — FRIDA KAHLO ===== -->
   <section id="s16" class="slide" data-label="16 Frida Kahlo">
     <div class="frame">
-      <div class="eyebrow">V · Approfondimento</div>
+      <div class="eyebrow">V · Simbolo di emancipazione</div>
       <div class="rule"></div>
-      <div class="frida-layout" style="margin-top:32px;">
-        <div class="frida-mosaic">
-          <img src="images/frida-portrait.jpg" alt="Frida Kahlo ritratto" class="bw" onerror="this.style.display='none'">
-          <img src="images/frida-selfportrait.jpg" alt="Autoritratto Frida Kahlo" onerror="this.style.display='none'">
-          <img src="images/frida-bench.jpg" alt="Frida Kahlo su panchina" onerror="this.style.display='none'">
-          <img src="images/frida-twofridas.jpg" alt="Le due Frida" onerror="this.style.display='none'">
+      <div class="figure-slide" style="margin-top:40px;">
+        <div class="figure-portrait">
+          <img src="images/frida-bench.jpg" alt="Frida Kahlo" onerror="this.style.display='none'">
+          <div class="cap">Frida Kahlo</div>
         </div>
-        <div class="frida-side">
+        <div class="figure-side">
           <h2>Frida Kahlo</h2>
           <div class="years">MESSICO · 1907 — 1954</div>
-          <div class="frida-themes">
-            <div class="frida-theme">
-              <div class="n">01</div>
-              <div>
-                <h4>Rompe gli schemi</h4>
-                <p>Mostra il corpo senza filtri: fragilità, dolore, cicatrici. Ciò che la società chiama debolezza diventa forza e consapevolezza.</p>
-              </div>
-            </div>
-            <div class="frida-theme">
-              <div class="n">02</div>
-              <div>
-                <h4>Indipendenza radicale</h4>
-                <p>Relazioni libere, posizione politica, identità propria. Si rifiuta di essere definita dal ruolo di moglie o dalle aspettative sociali.</p>
-              </div>
-            </div>
-            <div class="frida-theme">
-              <div class="n">03</div>
-              <div>
-                <h4>Identità culturale come atto politico</h4>
-                <p>Abiti tradizionali messicani, radici indigene, orgoglio di appartenenza. Emancipazione come individuo oltre che come donna.</p>
-              </div>
-            </div>
-            <div class="frida-theme">
-              <div class="n">04</div>
-              <div>
-                <h4>Voce dell'esperienza femminile</h4>
-                <p>Porta al centro dell'arte corpo, maternità, sofferenza, identità — temi spesso taciuti. L'arte come atto di liberazione.</p>
-              </div>
-            </div>
+          <p>Pittrice messicana, icona globale di resistenza e autodeterminazione. Trasformò il dolore fisico e le oppressioni di genere, cultura e classe in arte potente e politica. La sua vita fu un atto di emancipazione radicale e quotidiana.</p>
+          <div class="timeline">
+            <div class="row-t"><div class="yr">1925</div><div class="ev">Incidente devastante — inizia a dipingere durante la convalescenza. Il dolore diventa voce.</div></div>
+            <div class="row-t"><div class="yr">1938</div><div class="ev">Prima mostra a New York — riconoscimento internazionale come artista indipendente.</div></div>
+            <div class="row-t"><div class="yr">1953</div><div class="ev">Prima mostra in Messico — partecipa in barella. Rifiuta di scomparire.</div></div>
           </div>
         </div>
       </div>
