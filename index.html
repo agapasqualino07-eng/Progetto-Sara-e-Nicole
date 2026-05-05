@@ -570,25 +570,25 @@
   }
   .frida-gal-col{display:flex;flex-direction:column;gap:14px;}
   .frida-gal-img{
-    height:220px;overflow:hidden;position:relative;
+    height:300px;overflow:hidden;position:relative;
     border:1px solid var(--rule);
   }
   .frida-gal-img img{
     position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:center top;display:block;
+    object-fit:cover;object-position:center 25%;display:block;
   }
   .frida-gal-text h4{
-    font-family:'Fraunces',serif;font-weight:400;font-size:24px;
+    font-family:'Fraunces',serif;font-weight:400;font-size:26px;
     line-height:1.15;margin:0 0 6px 0;letter-spacing:-0.01em;color:var(--terra);
   }
   .frida-gal-text p{
-    font-family:'Inter',sans-serif;font-size:16px;line-height:1.4;
+    font-family:'Inter',sans-serif;font-size:17px;line-height:1.4;
     color:var(--ink-2);margin:0;
   }
   .frida-synthesis{
     border-top:1px solid var(--rule);padding-top:18px;margin-top:8px;
     font-family:'Fraunces',serif;font-weight:400;
-    font-size:21px;line-height:1.5;color:var(--ink);
+    font-size:22px;line-height:1.5;color:var(--ink);
     letter-spacing:-0.005em;max-width:1700px;
   }
   .frida-synthesis p{margin:0 0 10px 0;}
@@ -1145,7 +1145,7 @@
 
   <!-- ===== 18 — FRIDA: GALLERY (foto rimpicciolite + testo integrato) ===== -->
   <section id="s18" class="slide" data-label="18 L'arte come atto di liberazione">
-    <div class="frame" style="padding:70px 100px 120px 100px;">
+    <div class="frame" style="padding:60px 100px 110px 100px;">
       <div class="eyebrow">V · L'arte come atto di liberazione</div>
       <div class="rule"></div>
       <div class="frida-intro">
@@ -1154,7 +1154,7 @@
       <div class="frida-gallery">
         <div class="frida-gal-col">
           <div class="frida-gal-img">
-            <img src="images/frida-portrait.jpg" alt="Frida Kahlo – ritratto" onerror="this.style.display='none'">
+            <img src="images/frida-portrait.jpg" alt="Frida Kahlo – ritratto" onerror="this.style.display='none'" style="object-position:center 30%;">
           </div>
           <div class="frida-gal-text">
             <h4>Il corpo come manifesto</h4>
@@ -1163,7 +1163,7 @@
         </div>
         <div class="frida-gal-col">
           <div class="frida-gal-img">
-            <img src="images/frida-selfportrait.jpg" alt="Autoritratto Frida Kahlo" onerror="this.style.display='none'">
+            <img src="images/frida-selfportrait.jpg" alt="Autoritratto Frida Kahlo" onerror="this.style.display='none'" style="object-position:center 20%;">
           </div>
           <div class="frida-gal-text">
             <h4>L'identità come scelta politica</h4>
@@ -1172,7 +1172,7 @@
         </div>
         <div class="frida-gal-col">
           <div class="frida-gal-img">
-            <img src="images/frida-twofridas.jpg" alt="Le due Frida – 1939" onerror="this.style.display='none'">
+            <img src="images/frida-twofridas.jpg" alt="Le due Frida – 1939" onerror="this.style.display='none'" style="object-fit:contain;object-position:center;background:#1a1410;">
           </div>
           <div class="frida-gal-text">
             <h4>Le due Frida · 1939</h4>
