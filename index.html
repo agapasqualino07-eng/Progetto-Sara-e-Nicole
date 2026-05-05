@@ -23,7 +23,6 @@
   html,body{margin:0;padding:0;background:#1a1410;}
   body{font-family:'Inter',sans-serif;color:var(--ink);}
 
-  /* ====== SLIDE BASE ====== */
   .slide{
     background:var(--paper);
     color:var(--ink);
@@ -34,7 +33,6 @@
   .slide.dark{background:var(--ink);color:var(--paper);}
   .slide.terra{background:var(--terra);color:var(--paper);}
 
-  /* paper grain */
   .slide::after{
     content:"";position:absolute;inset:0;pointer-events:none;
     background-image:radial-gradient(rgba(58,46,36,0.05) 1px, transparent 1px);
@@ -45,7 +43,6 @@
     mix-blend-mode:screen;
   }
 
-  /* slide chrome */
   .frame{
     position:absolute;inset:0;
     padding:100px 120px 80px 120px;
@@ -75,7 +72,6 @@
   }
   .slide.dark .corner-section, .slide.terra .corner-section{color:rgba(244,236,223,0.6);}
 
-  /* type scale */
   .h-display{font-family:'Fraunces',serif;font-weight:400;font-size:200px;line-height:0.92;letter-spacing:-0.03em;}
   .h-title{font-family:'Fraunces',serif;font-weight:400;font-size:104px;line-height:1.0;letter-spacing:-0.02em;}
   .h-section{font-family:'Fraunces',serif;font-weight:400;font-size:72px;line-height:1.05;letter-spacing:-0.015em;}
@@ -85,34 +81,20 @@
   .small{font-family:'JetBrains Mono',monospace;font-weight:400;font-size:24px;color:var(--muted);}
   .accent-italic{font-family:'Fraunces',serif;font-style:italic;color:var(--terra);}
 
-  /* utility */
   .col{display:flex;flex-direction:column;}
   .row{display:flex;flex-direction:row;}
   .grow{flex:1;}
   .gap-s{gap:16px;} .gap-m{gap:32px;} .gap-l{gap:60px;} .gap-xl{gap:100px;}
 
-  /* ===== SLIDE 1: COVER ===== */
+  /* COVER */
   #s1 .word{
     font-family:'Fraunces',serif;font-weight:300;
     font-size:240px;line-height:0.9;letter-spacing:-0.04em;
     color:var(--ink);
   }
   #s1 .word .em{color:var(--terra);font-style:italic;font-weight:400;}
-  #s1 .meta{
-    position:absolute;left:120px;bottom:80px;
-    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
-    text-transform:uppercase;color:var(--muted);
-    display:flex;gap:48px;
-  }
-  #s1 .meta b{color:var(--ink);font-weight:500;}
-  #s1 .top-mark{
-    position:absolute;top:80px;left:120px;right:120px;
-    display:flex;justify-content:space-between;align-items:baseline;
-    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;
-    text-transform:uppercase;color:var(--muted);
-  }
 
-  /* ===== SLIDE 2: ETIMOLOGIA ===== */
+  /* ETIMOLOGIA */
   .etym{
     display:flex;align-items:baseline;gap:40px;justify-content:center;
     font-family:'Fraunces',serif;font-size:160px;font-weight:300;letter-spacing:-0.02em;
@@ -131,7 +113,7 @@
     color:var(--ink-2);margin-top:18px;letter-spacing:-0.01em;
   }
 
-  /* ===== SLIDE 3: ETERONOMIA → AUTONOMIA ===== */
+  /* ETERONOMIA → AUTONOMIA */
   .arrow-block{
     display:grid;grid-template-columns:1fr auto 1fr;gap:80px;align-items:center;
   }
@@ -157,7 +139,7 @@
     font-family:'Fraunces',serif;font-size:120px;color:var(--terra);font-weight:300;line-height:1;
   }
 
-  /* ===== SLIDE 4: AMPLIAMENTO ===== */
+  /* AMPLIAMENTO */
   .ladder{display:flex;flex-direction:column;gap:0;}
   .ladder .step{
     display:grid;grid-template-columns:200px 1fr;gap:60px;align-items:baseline;
@@ -172,31 +154,7 @@
     font-family:'Fraunces',serif;font-size:42px;line-height:1.2;color:var(--ink);
   }
 
-  /* ===== SLIDE 5: FREIRE ===== */
-  .pull-quote{
-    font-family:'Fraunces',serif;font-weight:300;font-style:italic;
-    font-size:78px;line-height:1.15;letter-spacing:-0.015em;
-    color:var(--ink);max-width:1500px;
-  }
-  .pull-quote .mark{color:var(--terra);font-style:normal;font-weight:400;}
-  .attribution{
-    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
-    text-transform:uppercase;color:var(--muted);margin-top:60px;
-  }
-  .freire-portrait{
-    width:380px;height:480px;background:var(--paper-2);
-    border:1px solid var(--rule);
-    display:flex;align-items:flex-end;justify-content:center;
-    padding:24px;box-sizing:border-box;
-    background-image:repeating-linear-gradient(135deg,transparent 0 14px,rgba(58,46,36,0.06) 14px 15px);
-    flex:none;
-  }
-  .freire-portrait .cap{
-    font-family:'JetBrains Mono',monospace;font-size:24px;
-    letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-align:center;
-  }
-
-  /* ===== SLIDE 6: MODELLO BANCARIO ===== */
+  /* MODELLO BANCARIO */
   .compare{
     display:grid;grid-template-columns:1fr 1fr;gap:0;
     border-top:1px solid var(--rule);
@@ -225,25 +183,16 @@
   .compare .col-c li::before{
     content:"—";color:var(--muted);margin-right:16px;
   }
+  .compare-footer{
+    margin-top:36px;
+    font-family:'Fraunces',serif;font-style:italic;
+    font-size:36px;line-height:1.35;color:var(--ink);
+    text-align:center;
+    letter-spacing:-0.01em;
+  }
+  .compare-footer em{color:var(--terra);font-style:italic;}
 
-  /* ===== SLIDE 7: EDUCAZIONE PRATICA DI LIBERTA ===== */
-  .three-up{display:grid;grid-template-columns:repeat(3,1fr);gap:60px;}
-  .three-up .card{
-    border-top:2px solid var(--terra);
-    padding-top:32px;
-  }
-  .three-up .card .num{
-    font-family:'Fraunces',serif;font-size:96px;font-weight:300;line-height:1;color:var(--terra);
-    letter-spacing:-0.02em;
-  }
-  .three-up .card h4{
-    font-family:'Fraunces',serif;font-weight:400;font-size:48px;margin:24px 0 20px 0;line-height:1.05;letter-spacing:-0.015em;
-  }
-  .three-up .card p{
-    font-family:'Inter',sans-serif;font-size:26px;line-height:1.5;color:var(--ink-2);margin:0;
-  }
-
-  /* ===== SLIDE 8: MINI-GIOCO ===== */
+  /* MINI-GIOCO */
   #s8 .game-wrap{
     display:grid;grid-template-columns:1fr 1fr;gap:0;
     flex:1;min-height:0;border-top:1px solid var(--rule);
@@ -261,8 +210,6 @@
     font-family:'Fraunces',serif;font-style:italic;font-size:26px;color:var(--muted);
     margin-bottom:24px;
   }
-
-  /* bancario stage */
   .stage{
     flex:1;position:relative;background:var(--paper-2);
     border:1px solid var(--rule);overflow:hidden;
@@ -315,7 +262,6 @@
   }
   .student .mouth.smile{height:6px;width:18px;border-radius:0 0 9px 9px;background:var(--paper-2);}
 
-  /* coin */
   .coin{
     position:absolute;width:24px;height:24px;border-radius:50%;
     background:var(--ochre);border:2px solid var(--ink);
@@ -325,20 +271,13 @@
     content:"$";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     font-family:'Fraunces',serif;font-size:14px;font-weight:600;color:var(--ink);
   }
-
-  /* overflow coin — falls down */
   .coin.overflow{background:var(--rule);border-color:var(--muted);}
   .coin.overflow::after{content:"×";color:var(--muted);}
 
-  /* dialog rays */
   .dialog-svg{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 0.4s;}
   .dialog-svg.on{opacity:1;}
-  .dialog-svg.on path{
-    animation:dash-flow 2s linear infinite;
-  }
-  @keyframes dash-flow{
-    to{stroke-dashoffset:-20;}
-  }
+  .dialog-svg.on path{animation:dash-flow 2s linear infinite;}
+  @keyframes dash-flow{to{stroke-dashoffset:-20;}}
 
   .lightbulb{
     position:absolute;top:-10px;right:-10px;
@@ -350,29 +289,14 @@
   .lightbulb.on{opacity:1;box-shadow:0 0 0 12px rgba(184,132,58,0.25);}
   .lightbulb.on.bright{box-shadow:0 0 0 20px rgba(184,132,58,0.35), 0 0 40px rgba(184,132,58,0.2);}
 
-  .game-controls{
-    margin-top:20px;display:flex;gap:12px;align-items:center;
-  }
-  .btn{
-    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;
-    text-transform:uppercase;padding:14px 22px;
-    border:1px solid var(--ink);background:var(--paper);color:var(--ink);
-    cursor:pointer;transition:all 0.15s;
-  }
-  .btn:hover{background:var(--ink);color:var(--paper);}
-  .btn.terra{background:var(--terra);color:var(--paper);border-color:var(--terra);}
-  .btn.terra:hover{background:var(--ink);border-color:var(--ink);}
-  .meter{
-    flex:1;height:6px;background:var(--rule);position:relative;
-  }
+  .game-controls{margin-top:20px;display:flex;gap:12px;align-items:center;}
+  .meter{flex:1;height:6px;background:var(--rule);position:relative;}
   .meter .bar{
     position:absolute;left:0;top:0;bottom:0;width:0%;background:var(--terra);transition:width 0.4s;
   }
   .meter-label{
     font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--muted);min-width:80px;text-align:right;
   }
-
-  /* bank locked indicator */
   .bank-lock{
     position:absolute;top:12px;right:12px;
     font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.12em;
@@ -382,7 +306,6 @@
   }
   .bank-lock.show{opacity:1;}
 
-  /* game celebration overlay */
   .dlg-celebration{
     position:absolute;inset:0;
     background:rgba(154,74,42,0.93);
@@ -402,7 +325,6 @@
     text-transform:uppercase;color:rgba(244,236,223,0.65);margin-top:20px;
   }
 
-  /* game reset row */
   .game-reset-row{
     display:flex;justify-content:center;align-items:center;
     gap:24px;margin-top:12px;padding-top:12px;
@@ -420,7 +342,6 @@
     color:var(--muted);
   }
 
-  /* teacher shake */
   @keyframes teacher-shake{
     0%,100%{transform:translateX(-50%);}
     20%{transform:translateX(calc(-50% - 6px)) rotate(-4deg);}
@@ -428,54 +349,118 @@
   }
   .teacher.shake{animation:teacher-shake 0.4s ease-in-out;}
 
-  /* ===== SLIDE 9: COSCIENTIZZAZIONE ===== */
-  #s9 .word-big{
+  /* COSCIENTIZZAZIONE */
+  .word-big{
     font-family:'Fraunces',serif;font-weight:300;font-size:200px;line-height:0.95;
     letter-spacing:-0.035em;color:var(--paper);
   }
-  #s9 .word-big em{font-style:italic;color:var(--ochre);font-weight:400;}
-  #s9 .gloss{
-    font-family:'Fraunces',serif;font-style:italic;font-size:42px;line-height:1.3;color:var(--ink-2);
-    max-width:900px;margin-top:48px;
+  .word-big em{font-style:italic;color:var(--ochre);font-weight:400;}
+  .gloss-d{
+    font-family:'Fraunces',serif;font-style:italic;font-size:38px;line-height:1.35;color:#d6c5ad;
+    max-width:1300px;margin-top:40px;
   }
-  #s9 .pt{
+  .pt-d{
     font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
+    text-transform:uppercase;color:var(--muted);margin-top:24px;
+  }
+  .closing-phrase-d{
+    margin-top:48px;
+    border-top:1px solid rgba(244,236,223,0.2);
+    padding-top:36px;
+    font-family:'Fraunces',serif;font-weight:400;
+    font-size:36px;line-height:1.4;color:var(--paper);
+    max-width:1500px;letter-spacing:-0.01em;
+  }
+  .closing-phrase-d em{color:var(--ochre);font-style:italic;}
+
+  /* CHI SONO GLI OPPRESSI */
+  .oppressi-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;flex:1;min-height:0;
+    align-items:start;margin-top:32px;
+  }
+  .oppressi-col h4{
+    font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:0.16em;
+    text-transform:uppercase;color:var(--terra);margin:0 0 24px 0;font-weight:500;
+  }
+  .oppressi-col .lead{
+    font-family:'Fraunces',serif;font-weight:400;font-size:30px;line-height:1.3;
+    color:var(--ink);margin:0 0 24px 0;letter-spacing:-0.01em;
+  }
+  .oppressi-col ul{
+    list-style:none;padding:0;margin:0;
+    font-family:'Inter',sans-serif;font-size:22px;line-height:1.45;color:var(--ink-2);
+  }
+  .oppressi-col li{
+    padding:14px 0;border-top:1px solid var(--rule);
+    display:flex;gap:14px;align-items:baseline;
+  }
+  .oppressi-col li:first-of-type{border-top:none;}
+  .oppressi-col li::before{
+    content:"";width:6px;height:6px;border-radius:50%;background:var(--terra);
+    flex:none;transform:translateY(-3px);
+  }
+  .oppressi-col li b{font-weight:500;color:var(--ink);}
+  .oppressi-col .types{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;
+  }
+  .oppressi-col .types span{
+    font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--terra);
+    border:1px solid var(--rule);padding:6px 12px;
+  }
+
+  /* VULNERABILITA — refactored as quote */
+  .quote-block{
+    display:grid;grid-template-columns:1.2fr 1fr;gap:72px;flex:1;min-height:0;
+    margin-top:32px;
+  }
+  .quote-side{
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  .bufalino-quote{
+    font-family:'Fraunces',serif;font-weight:300;font-style:italic;
+    font-size:32px;line-height:1.4;letter-spacing:-0.005em;color:var(--ink);
+  }
+  .bufalino-quote .mk{color:var(--terra);font-style:normal;font-weight:400;}
+  .bufalino-quote em{font-style:italic;color:var(--terra);}
+  .bufalino-attrib{
+    font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.16em;
     text-transform:uppercase;color:var(--muted);margin-top:32px;
   }
+  .frag-vuln{
+    border:1px solid var(--rule);padding:32px 36px;
+    background:rgba(255,255,255,0.4);
+  }
+  .frag-vuln h5{
+    font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--muted);margin:0 0 12px 0;font-weight:500;
+  }
+  .frag-vuln .term{
+    font-family:'Fraunces',serif;font-weight:400;font-size:42px;color:var(--ink);
+    margin-bottom:12px;letter-spacing:-0.02em;line-height:1;
+  }
+  .frag-vuln .term.terra{color:var(--terra);}
+  .frag-vuln p{
+    font-family:'Inter',sans-serif;font-size:22px;line-height:1.5;
+    color:var(--ink-2);margin:0;
+  }
+  .frag-vuln + .frag-vuln{margin-top:20px;}
 
-  /* ===== SLIDE 10: VULNERABILITA ===== */
-  .vs-table{
-    display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);
-  }
-  .vs-table .head{
-    padding:32px 40px;border-right:1px solid var(--rule);
-    background:var(--paper-2);
-  }
-  .vs-table .head:last-child{border-right:none;background:rgba(154,74,42,0.1);}
-  .vs-table .head h3{
-    font-family:'Fraunces',serif;font-size:60px;font-weight:400;margin:0;letter-spacing:-0.02em;
-  }
-  .vs-table .head:last-child h3{color:var(--terra);}
-  .vs-table .head .sub{
-    font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.16em;
-    text-transform:uppercase;color:var(--muted);margin-top:8px;
-  }
-  .vs-table .cell{
-    padding:24px 40px;border-top:1px solid var(--rule);border-right:1px solid var(--rule);
-    font-family:'Inter',sans-serif;font-size:26px;line-height:1.45;color:var(--ink-2);
-  }
-  .vs-table .cell:nth-child(2n){border-right:none;}
-
-  /* ===== SLIDE 11/12: MALALA / ALBRIGHT ===== */
+  /* MALALA / ALBRIGHT */
   .figure-slide{display:grid;grid-template-columns:560px 1fr;gap:80px;flex:1;min-height:0;}
   .figure-portrait{
     background:var(--paper-2);border:1px solid var(--rule);
     background-image:repeating-linear-gradient(135deg,transparent 0 14px,rgba(58,46,36,0.06) 14px 15px);
-    display:flex;align-items:flex-end;padding:24px;
+    display:flex;align-items:flex-end;padding:24px;position:relative;
+  }
+  .figure-portrait img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center top;display:block;
   }
   .figure-portrait .cap{
     font-family:'JetBrains Mono',monospace;font-size:24px;
     letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
+    position:relative;z-index:1;
   }
   .figure-side h2{
     font-family:'Fraunces',serif;font-weight:400;font-size:96px;line-height:0.95;margin:0 0 16px 0;letter-spacing:-0.025em;
@@ -495,7 +480,13 @@
   .timeline .yr{font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--terra);letter-spacing:0.1em;font-weight:500;}
   .timeline .ev{font-family:'Inter',sans-serif;font-size:26px;color:var(--ink-2);line-height:1.4;}
 
-  /* ===== SLIDE 13: DONNE ===== */
+  #s5 .figure-portrait img{
+    transform:rotate(-5deg) scale(1.12);
+    transform-origin:center center;
+    filter:grayscale(20%);
+  }
+
+  /* DONNE */
   .factor-grid{
     display:grid;grid-template-columns:1fr 1fr;gap:48px 80px;
   }
@@ -512,53 +503,33 @@
     font-family:'Inter',sans-serif;font-size:24px;line-height:1.5;color:var(--ink-2);margin:0;
   }
 
-  /* ===== SLIDE 14: FUTURO ===== */
+  /* FUTURO */
   #s14 .closer{
-    font-family:'Fraunces',serif;font-weight:300;font-size:96px;line-height:1.1;
-    letter-spacing:-0.025em;color:var(--paper);max-width:1500px;
+    font-family:'Fraunces',serif;font-weight:300;font-size:84px;line-height:1.1;
+    letter-spacing:-0.025em;color:var(--paper);max-width:1600px;
   }
   #s14 .closer em{font-style:italic;color:var(--ochre);font-weight:400;}
+  #s14 .closer-add{
+    margin-top:48px;
+    font-family:'Fraunces',serif;font-weight:400;font-style:italic;
+    font-size:42px;line-height:1.35;color:rgba(244,236,223,0.92);
+    max-width:1500px;letter-spacing:-0.01em;
+    border-top:1px solid rgba(244,236,223,0.25);
+    padding-top:40px;
+  }
+  #s14 .closer-add em{color:var(--ochre);font-style:italic;}
   #s14 .end-mark{
     font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;
-    text-transform:uppercase;color:rgba(244,236,223,0.7);margin-top:64px;
-  }
-  #s14 .signoff{
-    position:absolute;left:120px;bottom:80px;
-    font-family:'Fraunces',serif;font-style:italic;font-size:38px;color:var(--ochre);
+    text-transform:uppercase;color:rgba(244,236,223,0.7);margin-top:48px;
   }
   #s14 .cite-film{
     font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.14em;
     text-transform:uppercase;color:rgba(244,236,223,0.5);margin-top:16px;
   }
 
-  /* ===== PORTRAIT PHOTOS ===== */
-  .figure-portrait{position:relative;}
-  .figure-portrait img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:center top;
-    display:block;
-  }
-  .figure-portrait .cap{position:relative;z-index:1;}
-
-  .freire-portrait img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:center top;
-    display:block;filter:grayscale(20%);
-  }
-  .freire-portrait .cap{position:relative;z-index:1;}
-
-  #s5 .figure-portrait img{
-    transform:rotate(-5deg) scale(1.12);
-    transform-origin:center center;
-  }
-
-  /* ===== SLIDE 15: TRAILER ===== */
-  #s15 .trailer-wrap{
-    flex:1;min-height:0;width:100%;
-  }
-  #s15 .trailer-wrap iframe{
-    width:100%;height:100%;border:0;display:block;
-  }
+  /* TRAILER */
+  #s15 .trailer-wrap{flex:1;min-height:0;width:100%;}
+  #s15 .trailer-wrap iframe{width:100%;height:100%;border:0;display:block;}
   #s15 .film-title{
     font-family:'Fraunces',serif;font-weight:300;font-style:italic;
     font-size:80px;line-height:1.0;letter-spacing:-0.025em;
@@ -569,16 +540,14 @@
     text-transform:uppercase;color:rgba(244,236,223,0.5);margin-top:20px;
   }
 
-  /* ===== SLIDE 16: MORALE ===== */
+  /* MORALE */
   #s16 .moral-body{
     font-family:'Fraunces',serif;font-weight:300;font-size:52px;line-height:1.45;
     letter-spacing:-0.01em;color:var(--paper);max-width:1580px;
   }
   #s16 .moral-body em{font-style:italic;color:var(--ochre);font-weight:400;}
   #s16 .moral-body strong{font-style:normal;font-weight:500;color:var(--paper);}
-  #s16 .moral-divider{
-    width:80px;height:2px;background:var(--ochre);margin:56px 0;
-  }
+  #s16 .moral-divider{width:80px;height:2px;background:var(--ochre);margin:56px 0;}
   #s16 .moral-close{
     font-family:'Fraunces',serif;font-weight:300;font-style:italic;
     font-size:44px;line-height:1.4;letter-spacing:-0.01em;
@@ -586,13 +555,22 @@
   }
   #s16 .moral-close em{color:var(--ochre);font-style:italic;}
 
-  /* ===== SLIDE 18: FRIDA GALLERY ===== */
-  .frida-gallery{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:48px;
+  /* FRIDA GALLERY (refactored — foto smaller, text integrated) */
+  .frida-intro{
+    margin:24px 0 28px 0;
+    font-family:'Fraunces',serif;font-weight:300;font-style:italic;
+    font-size:34px;line-height:1.35;color:var(--ink-2);
+    max-width:1700px;letter-spacing:-0.005em;
   }
-  .frida-gal-col{display:flex;flex-direction:column;gap:20px;}
+  .frida-intro em{color:var(--terra);font-style:italic;}
+
+  .frida-gallery{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:36px;
+    margin-bottom:28px;
+  }
+  .frida-gal-col{display:flex;flex-direction:column;gap:14px;}
   .frida-gal-img{
-    flex:1;min-height:0;overflow:hidden;position:relative;
+    height:280px;overflow:hidden;position:relative;
     border:1px solid var(--rule);
   }
   .frida-gal-img img{
@@ -600,13 +578,21 @@
     object-fit:cover;object-position:center top;display:block;
   }
   .frida-gal-text h4{
-    font-family:'Fraunces',serif;font-weight:400;font-size:36px;
-    line-height:1.1;margin:0 0 12px 0;letter-spacing:-0.01em;color:var(--terra);
+    font-family:'Fraunces',serif;font-weight:400;font-size:28px;
+    line-height:1.15;margin:0 0 8px 0;letter-spacing:-0.01em;color:var(--terra);
   }
   .frida-gal-text p{
-    font-family:'Inter',sans-serif;font-size:24px;line-height:1.5;
+    font-family:'Inter',sans-serif;font-size:18px;line-height:1.45;
     color:var(--ink-2);margin:0;
   }
+  .frida-synthesis{
+    border-top:1px solid var(--rule);padding-top:24px;
+    font-family:'Fraunces',serif;font-weight:400;
+    font-size:26px;line-height:1.5;color:var(--ink);
+    letter-spacing:-0.005em;max-width:1700px;
+  }
+  .frida-synthesis em{color:var(--terra);font-style:italic;}
+  .frida-synthesis strong{font-weight:500;color:var(--ink);}
 
 </style>
 </head>
@@ -651,7 +637,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">02 / 19</div>
+    <div class="corner-num">02 / 18</div>
   </section>
 
   <!-- ===== 3 — DA OGGETTO A SOGGETTO ===== -->
@@ -682,7 +668,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">03 / 19</div>
+    <div class="corner-num">03 / 18</div>
   </section>
 
   <!-- ===== 4 — UNA PAROLA CHE SI ALLARGA ===== -->
@@ -703,7 +689,7 @@
       </div>
     </div>
     <div class="corner-section">Atto I</div>
-    <div class="corner-num">04 / 19</div>
+    <div class="corner-num">04 / 18</div>
   </section>
 
   <!-- ===== 5 — FREIRE ===== -->
@@ -713,7 +699,7 @@
       <div class="rule"></div>
       <div class="figure-slide" style="margin-top:40px;">
         <div class="figure-portrait">
-          <img src="images/freire.png" alt="Paulo Freire" onerror="this.style.display='none'" style="filter:grayscale(20%);">
+          <img src="images/freire.png" alt="Paulo Freire" onerror="this.style.display='none'">
           <div class="cap">Paulo Freire</div>
         </div>
         <div class="figure-side">
@@ -729,16 +715,16 @@
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">05 / 19</div>
+    <div class="corner-num">05 / 18</div>
   </section>
 
-  <!-- ===== 6 — MODELLO BANCARIO vs DIALOGICO ===== -->
+  <!-- ===== 6 — MODELLO BANCARIO vs DIALOGICO + frase aggiunta ===== -->
   <section id="s6" class="slide" data-label="06 Il modello bancario">
     <div class="frame">
       <div class="eyebrow">II · Due modelli a confronto</div>
       <div class="rule"></div>
-      <div class="h-title" style="margin:32px 0 40px 0;">Il sapere si <span class="accent-italic">deposita</span> o si <span class="accent-italic">costruisce</span>?</div>
-      <div class="compare grow">
+      <div class="h-title" style="margin:32px 0 32px 0;">Il sapere si <span class="accent-italic">deposita</span> o si <span class="accent-italic">costruisce</span>?</div>
+      <div class="compare">
         <div class="col-c">
           <span class="tag">Modello bancario</span>
           <h3>L'aula come deposito.</h3>
@@ -760,41 +746,18 @@
           </ul>
         </div>
       </div>
-    </div>
-    <div class="corner-section">Atto II</div>
-    <div class="corner-num">06 / 19</div>
-  </section>
-
-  <!-- ===== 7 — TRE PRINCIPI ===== -->
-  <section id="s7" class="slide" data-label="07 Educazione come pratica di libertà">
-    <div class="frame">
-      <div class="eyebrow">II · Tre principi freiriani</div>
-      <div class="rule"></div>
-      <div class="h-title" style="margin:32px 0 80px 0;max-width:1500px;">L'educazione come <span class="accent-italic">pratica di libertà</span>.</div>
-      <div class="three-up grow" style="align-content:start;">
-        <div class="card">
-          <div class="num">01</div>
-          <h4>Dialogo</h4>
-          <p>Insegnante e studente costruiscono insieme il significato. Nessuno insegna a nessuno: si impara mediati dal mondo.</p>
-        </div>
-        <div class="card">
-          <div class="num">02</div>
-          <h4>Partecipazione</h4>
-          <p>L'apprendimento è atto politico. La voce dello studente entra nella stanza, e la trasforma.</p>
-        </div>
-        <div class="card">
-          <div class="num">03</div>
-          <h4>Riflessione critica</h4>
-          <p>Leggere il mondo prima della parola. Interrogare le cause della propria condizione, per poterla cambiare.</p>
-        </div>
+      <div class="compare-footer">
+        L'oppressione riguarda <em>anche il modo di pensare</em>.
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">07 / 19</div>
+    <div class="corner-num">06 / 18</div>
   </section>
 
-  <!-- ===== 8 — MINI-GIOCO ===== -->
-  <section id="s8" class="slide" data-label="08 Esperimento – Versa il sapere">
+  <!-- ===== SLIDE "TRE PRINCIPI FREIRIANI" ELIMINATA come da indicazione ===== -->
+
+  <!-- ===== 7 — MINI-GIOCO ===== -->
+  <section id="s8" class="slide" data-label="07 Esperimento – Versa il sapere">
     <div class="frame" style="padding-bottom:40px;">
       <div class="eyebrow">II · Esperimento interattivo</div>
       <div class="rule"></div>
@@ -803,7 +766,6 @@
         Clicca sul docente in entrambe le aule. Osserva cosa cambia.
       </div>
       <div class="game-wrap">
-        <!-- BANK SIDE -->
         <div class="game-side">
           <div class="title">Aula bancaria</div>
           <div class="subtitle">Sapere come trasferimento.</div>
@@ -829,12 +791,10 @@
             I contenitori si riempiono. La coscienza non cresce.
           </div>
         </div>
-        <!-- DIALOG SIDE -->
         <div class="game-side">
           <div class="title">Aula dialogica</div>
           <div class="subtitle">Sapere come incontro.</div>
           <div class="stage" id="dlgStage">
-            <!-- celebration overlay -->
             <div class="dlg-celebration" id="dlgCelebration">
               <div class="cel-word"><em>Coscientizzazione!</em></div>
               <div class="cel-sub">Il dialogo trasforma la coscienza.</div>
@@ -882,64 +842,117 @@
           </div>
         </div>
       </div>
-      <!-- reset row -->
       <div class="game-reset-row">
         <button class="btn-reset" id="gameReset">↺ Ricomincia</button>
         <span class="game-reset-hint">clicca su entrambi i docenti per confrontare i modelli</span>
       </div>
     </div>
-    <div class="corner-num">08 / 19</div>
+    <div class="corner-num">07 / 18</div>
   </section>
 
-  <!-- ===== 9 — COSCIENTIZZAZIONE ===== -->
-  <section id="s9" class="slide dark" data-label="09 Coscientizzazione">
+  <!-- ===== 8 — COSCIENTIZZAZIONE + frase aggiunta ===== -->
+  <section id="s9" class="slide dark" data-label="08 Coscientizzazione">
     <div class="frame">
       <div class="eyebrow">II · Concetto chiave</div>
       <div class="rule"></div>
       <div class="grow" style="display:flex;flex-direction:column;justify-content:center;">
         <div class="word-big">cosci<em>ent</em>izzazione</div>
-        <div class="pt">port. <em>conscientização</em> · p. freire</div>
-        <div class="gloss" style="color:#d6c5ad;">
+        <div class="pt-d">port. <em>conscientização</em> · p. freire</div>
+        <div class="gloss-d">
           Il processo con cui una persona diventa consapevole della propria condizione e impara a cambiarla.<br/>
           <span style="color:var(--ochre);">La liberazione non è individuale: è collettiva.</span>
+        </div>
+        <div class="closing-phrase-d">
+          L'emancipazione significa quindi: da un lato <em>liberarsi</em> da pregiudizi e discriminazioni, dall'altro imparare a <em>riconoscere e valorizzare</em> le differenze degli altri.
         </div>
       </div>
     </div>
     <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto II</div>
-    <div class="corner-num">09 / 19</div>
+    <div class="corner-num">08 / 18</div>
   </section>
 
-  <!-- ===== 10 — VULNERABILITA ≠ FRAGILITA ===== -->
-  <section id="s10" class="slide" data-label="10 Vulnerabilità non è fragilità">
+  <!-- ===== 9 — NEW: CHI SONO GLI OPPRESSI ===== -->
+  <section id="s9b" class="slide" data-label="09 Chi sono gli oppressi">
     <div class="frame">
-      <div class="eyebrow">II · Una distinzione necessaria</div>
+      <div class="eyebrow">II · Chi sono gli oppressi</div>
       <div class="rule"></div>
-      <div class="h-title" style="margin:32px 0 48px 0;max-width:1600px;">
-        Gli oppressi non sono <span class="accent-italic">fragili</span>.<br/>
-        Sono <span class="accent-italic">vulnerabili</span>.
+      <div class="h-section" style="margin:32px 0 8px 0;max-width:1700px;">
+        Tutti coloro che vivono in una <span class="accent-italic">situazione</span> in cui:
       </div>
-      <div class="vs-table grow" style="align-self:stretch;">
-        <div class="head">
-          <h3>Fragilità</h3>
-          <div class="sub">Condizione interna</div>
+      <div class="oppressi-grid">
+        <div class="oppressi-col">
+          <h4>Quattro condizioni</h4>
+          <ul style="font-size:24px;">
+            <li>non hanno pieno controllo sulla propria vita</li>
+            <li>subiscono decisioni prese da altri</li>
+            <li>non hanno accesso equo a diritti, risorse o possibilità</li>
+            <li>non riescono a esprimere pienamente la propria voce</li>
+          </ul>
+          <p class="lead" style="margin-top:32px;">
+            Non si tratta solo di <em style="color:var(--terra);font-style:italic;">povertà economica</em>.<br/>
+            L'oppressione può essere:
+          </p>
+          <div class="types">
+            <span>sociale</span>
+            <span>culturale</span>
+            <span>politica</span>
+            <span>educativa</span>
+          </div>
         </div>
-        <div class="head">
-          <h3>Vulnerabilità</h3>
-          <div class="sub">Condizione relazionale</div>
+        <div class="oppressi-col">
+          <h4>Categorie riconoscibili oggi</h4>
+          <p class="lead">
+            Nella pedagogia interculturale possiamo riconoscere come "oppressi" diverse categorie di persone:
+          </p>
+          <ul>
+            <li><b>Migranti e rifugiati</b> — esclusione linguistica, culturale, sociale</li>
+            <li><b>Minoranze etniche o culturali</b> discriminate</li>
+            <li><b>Persone in povertà educativa</b></li>
+            <li><b>Donne</b> in contesti di disuguaglianza di genere</li>
+            <li><b>Individui marginalizzati</b> per motivi sociali o identitari</li>
+          </ul>
         </div>
-        <div class="cell">Debolezza intrinseca, strutturale.</div>
-        <div class="cell">Dipende dal contesto sociale, economico, culturale.</div>
-        <div class="cell">Percepita come poco modificabile.</div>
-        <div class="cell">Temporanea — può essere trasformata.</div>
-        <div class="cell">Connotazione statica, identitaria.</div>
-        <div class="cell">Maggiore esposizione al rischio, ma anche al cambiamento.</div>
-      </div>
-      <div class="body-m" style="margin-top:32px;font-style:italic;font-family:'Fraunces',serif;font-size:30px;">
-        Proprio perché vulnerabili, gli oppressi possono sviluppare coscienza critica — e emanciparsi.
       </div>
     </div>
     <div class="corner-section">Atto II</div>
-    <div class="corner-num">10 / 19</div>
+    <div class="corner-num">09 / 18</div>
+  </section>
+
+  <!-- ===== 10 — VULNERABILITA ≠ FRAGILITA (rifatta con citazione Bufalino) ===== -->
+  <section id="s10" class="slide" data-label="10 Vulnerabilità e fragilità — Bufalino">
+    <div class="frame">
+      <div class="eyebrow">II · Una distinzione necessaria</div>
+      <div class="rule"></div>
+      <div class="h-title" style="margin:32px 0 8px 0;max-width:1700px;font-size:84px;">
+        Gli oppressi non sono <span class="accent-italic">fragili</span>.<br/>
+        Sono <span class="accent-italic">vulnerabili</span>.
+      </div>
+      <div class="quote-block">
+        <div class="quote-side">
+          <div class="bufalino-quote">
+            <span class="mk">«</span>La <em>vulnerabilità</em> è una condizione <em>relazionale e contestuale</em>: dipende dal contesto sociale, economico, culturale. Non è una caratteristica intrinseca della persona, può essere temporanea e modificabile, indica una maggiore esposizione al rischio — ma anche una possibilità di trasformazione.<span class="mk">»</span>
+          </div>
+          <div class="bufalino-attrib">— Gesualdo Bufalino · sulla vulnerabilità</div>
+        </div>
+        <div class="col" style="justify-content:center;">
+          <div class="frag-vuln">
+            <h5>Fragilità</h5>
+            <div class="term">condizione interna</div>
+            <p>Debolezza intrinseca o strutturale, percepita come poco modificabile. Connotazione statica e identitaria.</p>
+          </div>
+          <div class="frag-vuln" style="background:rgba(154,74,42,0.08);border-color:var(--terra);">
+            <h5 style="color:var(--terra);">Vulnerabilità</h5>
+            <div class="term terra">condizione relazionale</div>
+            <p>Dipende dal contesto. Temporanea, trasformabile. Espone al rischio ma anche al cambiamento.</p>
+          </div>
+        </div>
+      </div>
+      <div class="body-m" style="margin-top:24px;font-style:italic;font-family:'Fraunces',serif;font-size:28px;color:var(--ink);">
+        Proprio perché vulnerabili, gli oppressi possono sviluppare coscienza critica — e <span style="color:var(--terra);">emanciparsi</span>.
+      </div>
+    </div>
+    <div class="corner-section">Atto II</div>
+    <div class="corner-num">10 / 18</div>
   </section>
 
   <!-- ===== 11 — MALALA ===== -->
@@ -965,7 +978,7 @@
       </div>
     </div>
     <div class="corner-section">Atto III</div>
-    <div class="corner-num">11 / 19</div>
+    <div class="corner-num">11 / 18</div>
   </section>
 
   <!-- ===== 12 — ALBRIGHT ===== -->
@@ -991,10 +1004,10 @@
       </div>
     </div>
     <div class="corner-section">Atto III</div>
-    <div class="corner-num">12 / 19</div>
+    <div class="corner-num">12 / 18</div>
   </section>
 
-  <!-- ===== 14 — DONNE ===== -->
+  <!-- ===== 13 — DONNE ===== -->
   <section id="s13" class="slide" data-label="13 Emancipazione femminile">
     <div class="frame" style="padding-bottom:140px;">
       <div class="eyebrow">IV · Emancipazione femminile</div>
@@ -1029,10 +1042,10 @@
       </div>
     </div>
     <div class="corner-section">Atto IV</div>
-    <div class="corner-num">13 / 19</div>
+    <div class="corner-num">13 / 18</div>
   </section>
 
-  <!-- ===== 14 — FUTURO ===== -->
+  <!-- ===== 14 — FUTURO + frase aggiunta ===== -->
   <section id="s14" class="slide terra" data-label="14 Verso il futuro">
     <div class="frame">
       <div class="eyebrow">V · Verso il futuro</div>
@@ -1043,14 +1056,18 @@
           rende l'emancipazione un <em>processo condiviso</em> —<br/>
           non più solo una conquista individuale.
         </div>
+        <div class="closer-add">
+          Aggiunge il superamento di <em>barriere profonde e condivise</em><br/>
+          che riguardano l'intera società.
+        </div>
         <div class="end-mark">— educazione · intercultura · futuro</div>
         <div class="cite-film">cfr. C'è ancora domani · Paola Cortellesi · 2023 →</div>
       </div>
     </div>
-    <div class="corner-num" style="color:rgba(244,236,223,0.7);">14 / 19</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.7);">14 / 18</div>
   </section>
 
-  <!-- ===== 15 — TRAILER C'È ANCORA DOMANI ===== -->
+  <!-- ===== 15 — TRAILER ===== -->
   <section id="s15" class="slide dark" data-label="15 C'è ancora domani">
     <div class="frame" style="padding:80px 120px 80px 120px;">
       <div class="eyebrow">V · Film</div>
@@ -1070,11 +1087,10 @@
       </div>
     </div>
     <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto V</div>
-    <div class="corner-num" style="color:rgba(244,236,223,0.6);">15 / 19</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.6);">15 / 18</div>
   </section>
 
-
-  <!-- ===== 16 — MORALE DEL FILM ===== -->
+  <!-- ===== 16 — MORALE ===== -->
   <section id="s16" class="slide dark" data-label="16 La morale">
     <div class="frame" style="padding:90px 140px 100px 140px;">
       <div class="eyebrow">V · La morale</div>
@@ -1096,10 +1112,10 @@
       </div>
     </div>
     <div class="corner-section" style="color:rgba(244,236,223,0.6);">Atto V</div>
-    <div class="corner-num" style="color:rgba(244,236,223,0.6);">16 / 19</div>
+    <div class="corner-num" style="color:rgba(244,236,223,0.6);">16 / 18</div>
   </section>
 
-  <!-- ===== 17 — FRIDA KAHLO ===== -->
+  <!-- ===== 17 — FRIDA KAHLO (intro) ===== -->
   <section id="s17" class="slide" data-label="17 Frida Kahlo">
     <div class="frame">
       <div class="eyebrow">V · Simbolo di emancipazione</div>
@@ -1122,23 +1138,25 @@
       </div>
     </div>
     <div class="corner-section">Atto V</div>
-    <div class="corner-num">17 / 19</div>
+    <div class="corner-num">17 / 18</div>
   </section>
 
-  <!-- ===== 18 — FRIDA: LE OPERE ===== -->
-  <section id="s18" class="slide" data-label="18 Frida – perché è un simbolo">
-    <div class="frame">
-      <div class="eyebrow">V · Perché Frida è un simbolo di emancipazione</div>
+  <!-- ===== 18 — FRIDA: GALLERY (foto rimpicciolite + testo integrato) ===== -->
+  <section id="s18" class="slide" data-label="18 L'arte come atto di liberazione">
+    <div class="frame" style="padding:80px 100px 60px 100px;">
+      <div class="eyebrow">V · L'arte come atto di liberazione</div>
       <div class="rule"></div>
-      <div class="h-section" style="margin:24px 0 40px 0;">L'arte come atto di <span class="accent-italic">liberazione</span>.</div>
-      <div class="frida-gallery grow">
+      <div class="frida-intro">
+        Perché Frida è un <em>simbolo di emancipazione</em>: tre opere, tre gesti politici.
+      </div>
+      <div class="frida-gallery">
         <div class="frida-gal-col">
           <div class="frida-gal-img">
             <img src="images/frida-portrait.jpg" alt="Frida Kahlo – ritratto" onerror="this.style.display='none'">
           </div>
           <div class="frida-gal-text">
             <h4>Il corpo come manifesto</h4>
-            <p>Baffi, sopracciglia folte, cicatrici senza ritocchi. Kahlo ridefinisce la bellezza femminile secondo i propri termini — non per compiacere lo sguardo altrui, ma per affermare la propria esistenza.</p>
+            <p>Baffi, sopracciglia folte, cicatrici senza ritocchi. Ridefinisce la bellezza femminile secondo i propri termini — non per compiacere lo sguardo altrui, ma per affermare la propria esistenza.</p>
           </div>
         </div>
         <div class="frida-gal-col">
@@ -1156,13 +1174,16 @@
           </div>
           <div class="frida-gal-text">
             <h4>Le due Frida · 1939</h4>
-            <p>Dipinto dopo il divorzio da Diego Rivera: due versioni di sé con cuori aperti e interconnessi. La scissione interiore resa visibile. La vulnerabilità non è debolezza — è coraggio di guardarsi dentro.</p>
+            <p>Dipinto dopo il divorzio da Diego Rivera: due versioni di sé con cuori aperti e interconnessi. La scissione interiore resa visibile. La vulnerabilità non è debolezza — è coraggio.</p>
           </div>
         </div>
       </div>
+      <div class="frida-synthesis">
+        Frida <strong>non si emancipa seguendo modelli esterni</strong>: costruisce un'identità autentica che tiene insieme due dimensioni — il suo essere donna e il suo vissuto di dolore fisico e psicologico. Sceglie di valorizzare le proprie <em>radici indigene messicane</em> in un'epoca in cui il modello dominante guardava all'Europa.
+      </div>
     </div>
     <div class="corner-section">Atto V</div>
-    <div class="corner-num">18 / 19</div>
+    <div class="corner-num">18 / 18</div>
   </section>
 
   <!-- ===== 19 — CHIUSURA ===== -->
@@ -1176,14 +1197,12 @@
 </deck-stage>
 
 <script>
-/* ====== MINI-GIOCO MIGLIORATO ====== */
+/* ====== MINI-GIOCO ====== */
 (function(){
 
-  // ── STATE ──────────────────────────────────────────────────────────────
   let bankClicks = 0;
   let dlgClicks  = 0;
 
-  // ── BANK elements ──────────────────────────────────────────────────────
   const bankFills   = ['bf1','bf2','bf3'].map(id=>document.getElementById(id));
   const bankMeter   = document.getElementById('bankMeter');
   const bankPct     = document.getElementById('bankPct');
@@ -1192,7 +1211,6 @@
   const bankFeedback= document.getElementById('bankFeedback');
   const bankLock    = document.getElementById('bankLock');
 
-  // ── DIALOG elements ────────────────────────────────────────────────────
   const dlgFills      = ['df1','df2','df3'].map(id=>document.getElementById(id));
   const lbs           = ['lb1','lb2','lb3'].map(id=>document.getElementById(id));
   const mouths        = ['m1','m2','m3'].map(id=>document.getElementById(id));
@@ -1204,7 +1222,6 @@
   const dlgCelebration= document.getElementById('dlgCelebration');
   const resetBtn      = document.getElementById('gameReset');
 
-  // ── COIN SPAWNER ───────────────────────────────────────────────────────
   function spawnCoin(stage, targetEl, overflow) {
     const sr = stage.getBoundingClientRect();
     const tr = targetEl.getBoundingClientRect();
@@ -1219,7 +1236,6 @@
     stage.appendChild(coin);
 
     if (overflow) {
-      // fall off below stage
       const drift = (Math.random() - 0.5) * 80;
       coin.style.transition = 'transform 0.7s cubic-bezier(.3,0,.7,1), opacity 0.3s 0.5s';
       requestAnimationFrame(() => {
@@ -1244,7 +1260,6 @@
     setTimeout(() => coin.remove(), 900);
   }
 
-  // ── BANK CLICK ─────────────────────────────────────────────────────────
   bankTeacher.addEventListener('click', () => {
     bankClicks++;
 
@@ -1254,12 +1269,10 @@
 
     spawnCoin(bankStage, target, isFull || allFull);
 
-    // consciousness barely ticks, then stalls
     const pct = Math.min(5, bankClicks);
     bankMeter.style.width = pct + '%';
     bankPct.textContent   = pct + '%';
 
-    // feedback copy
     if (bankClicks === 3) {
       bankFeedback.textContent  = 'I contenitori si riempiono. La comprensione no.';
       bankFeedback.style.color  = 'var(--terra)';
@@ -1269,38 +1282,31 @@
       bankFeedback.style.color  = 'var(--terra)';
       bankLock.classList.add('show');
       bankTeacher.classList.remove('shake');
-      void bankTeacher.offsetWidth; // reflow to restart animation
+      void bankTeacher.offsetWidth;
       bankTeacher.classList.add('shake');
       setTimeout(() => bankTeacher.classList.remove('shake'), 450);
     }
   });
 
-  // ── DIALOG CLICK ───────────────────────────────────────────────────────
   dlgTeacher.addEventListener('click', () => {
-    if (dlgClicks >= 5) return; // already at 100%
+    if (dlgClicks >= 5) return;
 
     dlgClicks++;
-
-    // activate SVG lines
     dlgSvg.classList.add('on');
 
-    // fill vessels together
     dlgFills.forEach(f => {
       const cur = parseFloat(f.style.height) || 0;
       f.style.height = Math.min(100, cur + 20) + '%';
     });
 
-    // consciousness grows fast
     const pct = Math.min(100, dlgClicks * 20);
     dlgMeter.style.width = pct + '%';
     dlgPct.textContent   = pct + '%';
 
-    // staged reactions
     if (dlgClicks >= 2) { lbs[0].classList.add('on'); mouths[0].classList.add('smile'); }
     if (dlgClicks >= 3) { lbs[1].classList.add('on'); mouths[1].classList.add('smile'); }
     if (dlgClicks >= 4) { lbs[2].classList.add('on'); mouths[2].classList.add('smile'); }
 
-    // all bulbs bright at max
     if (dlgClicks >= 5) {
       lbs.forEach(lb => lb.classList.add('bright'));
       dlgFeedback.textContent = 'Coscienza al 100%. Il dialogo ha trasformato tutto.';
@@ -1309,14 +1315,12 @@
     }
   });
 
-  // ── RESET ──────────────────────────────────────────────────────────────
   resetBtn.addEventListener('click', resetGame);
 
   function resetGame() {
     bankClicks = 0;
     dlgClicks  = 0;
 
-    // reset bank
     bankFills.forEach(f => { f.style.height = '0%'; });
     bankMeter.style.width  = '0%';
     bankPct.textContent    = '0%';
@@ -1325,7 +1329,6 @@
     bankLock.classList.remove('show');
     bankTeacher.classList.remove('shake');
 
-    // reset dialog
     dlgFills.forEach(f => { f.style.height = '0%'; });
     dlgMeter.style.width  = '0%';
     dlgPct.textContent    = '0%';
